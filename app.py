@@ -177,6 +177,15 @@ def edit_review(review_id):
         "edit_review.html", review=review, categories=categories)
 
 
+@app.route("/delete_review/<review_id>")
+def delete_review(review_id):
+    # Deletes the review by finding the matching review using review_id.
+    mongo.db.reviews.remove({"_id": ObjectId(review_id)})
+    flash("Review Successfully Deleted")
+    return redirect(url_for(
+            "profile", username=session["user"]))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
