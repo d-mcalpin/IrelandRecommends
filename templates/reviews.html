@@ -11,5 +11,27 @@
       <p>Your reviews and opinions are greatly appreciated</p>
    </div>
 </div>
-
+<div class="container">
+   <hr>
+</div>
+<div class="filters container center-align" id="list">
+   <div class="row">
+      <div class="col s2">
+         <a class="black-text " href="{{ url_for('reviews') }}#list"><i class="fas fa-street-view"></i><br>ALL</a> 
+      </div>
+      <div class="col s2">        
+         <a class="black-text" href="{{ url_for('filter_reviews', category_name='Eat') }}#list"><i class="fas fa-utensils"></i><br>EAT</a>
+      </div>
+      <div class="col s2">
+         <a class=" black-text" href="{{ url_for('filter_reviews', category_name='Drink') }}#list"><i class="fas fa-cocktail"></i><br>DRINK</a>  
+      </div>
+      <div class="col s2">  
+         <a class="black-text " href="{{ url_for('filter_reviews', category_name='Stay') }}#list"><i class="fas fa-hotel"></i><br>IN</a>
+      </div>
+      <div class="col s2">
+         <a class=" black-text" href="{{ url_for('filter_reviews', category_name='Visit') }}#list"><i class="fas fa-leaf"></i><br>OUT</a>
+      </div>
+   </div>
+</div>
+<div>
 {% endblock %}
