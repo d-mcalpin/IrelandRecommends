@@ -20,12 +20,12 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/tips")
 def tips():
-    # """
+    
     # On the reviews page, every indiviudal review from the reviews
     # collection in MongoDB then sorts it in order that 
     # the review has been added,
     # newest to oldest.
-    # """
+    
     category = list(mongo.db.reviews.find().sort("review_date", -1))
     return render_template("reviews.html", category=category)
 
