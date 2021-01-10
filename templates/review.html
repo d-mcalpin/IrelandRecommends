@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row tip-card">
+   <div class="col s12 l6">       
+      <img src="{{category.review_img}}" alt="{{category.review_name}}">   
+   </div>
+   <div class="col s12 l6 center-align">
+      <p class="uppercase btn grey darken-4">{{category.category_name}}</p>
+      <h4><strong>{{ category.review_name }}</strong></h4>
+      <p>{{ category.review_long }}</p>
+      {% if created_by|lower == "admin"|lower %}
+      <p><em>Edited by {{category.created_by}} on {{category.review_date}}</em></p>
+      {% else %}
+      <p><em>Created by {{category.created_by}} on {{category.review_date}}</em></p>
+      {% endif %}   
+      <a class="btn grey darken-4" href="{{ url_for('reviews') }}">Return to home</a>      
+   </div>
+</div>
+{% endblock %}

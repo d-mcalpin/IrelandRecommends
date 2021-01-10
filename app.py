@@ -48,15 +48,6 @@ def tip_page(review_id):
     return render_template("review.html", category=category)
 
 
-@app.route("/search", methods=["GET", "POST"])
-def search():
-    # Search function on the reviews.html page where the user can search any 
-    # word from the individual review.
-    query = request.form.get("query")
-    category = list(mongo.db.reviews.find({"$text": {"$search": query}}))
-    return render_template("reviews.html", category=category)
-
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     # On the register page, initially checks if the username already exists
