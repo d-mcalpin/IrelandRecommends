@@ -152,6 +152,31 @@ def add_review():
     return render_template("add_review.html", categories=categories)
 
 
+@app.route("/edit_review/<review_id>", methods=["GET", "POST"])
+def edit_review(review_id):
+    # Loads the review that has already been added and then uses the update
+    # function by selecting the correct review_id.
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "review_name": request.form.get("review_name"),
+            "review_short": request.form.get("review_short"),
+            "review_long": request.form.get("review_long"),
+            "review_img": request.form.get("review_img"),
+            "review_date": request.form.get("review_date"),
+            "created_by": session["user"],
+        }
+        mongo.db.tips.update({"_id": ObjectId(review_id)}, submit)
+        flash("Review Successfully Updated")
+        return redirect(url_for(
+            "profile", username=session["user"]))
+
+    review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+    categories = mongo.db.categories.find().sort("review_date", -1)
+    return render_template(
+        "edit_review.html", review=review, categories=categories)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
