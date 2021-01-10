@@ -53,4 +53,35 @@
       </div>
    </form>
 </div>
+{% if category|length > 0 %}
+<div class="container" >
+   <div class="row">
+      {% for cat in category %}    
+      <div class="col s12 m4">
+         <div class="card">
+            <div class="card-image">
+               <a href="{{url_for('review_page', review_id=cat._id)}}">
+               <img src="{{cat.review_img}}" alt="{{cat.review_name}}">   
+               </a>                 
+            </div>
+            <div class="card-content" style="padding-top:12px; padding-bottom:12px">
+               <p class="uppercase">{{cat.category_name}}</p>
+               <p><strong>{{ cat.review_name }}</strong></p>
+               <p>{{ cat.review_short }}</p>
+            </div>
+            <div class="card-action" style="padding-top:0px; padding-bottom:2px">
+               {% if cat.created_by|lower == "admin"|lower %}
+               <p><em>Edited by {{cat.created_by}} on {{cat.review_date}}</em></p>
+               {% else %}
+               <p><em>Created by {{cat.created_by}} on {{cat.review_date}}</em></p>
+               {% endif %}                  
+            </div>
+         </div>
+      </div>
+      {% endfor %}
+   </div>
+</div>
+{% else %}
+<h3 class="red-text center-align">No results found!</h3>
+{% endif %}
 {% endblock %}

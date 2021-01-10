@@ -1,7 +1,7 @@
 import os
 from flask import (
     Flask, flash, render_template,
-     redirect, request, session, url_for)
+    redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -41,11 +41,22 @@ def filter_reviews(category_name):
 
 
 @app.route('/review/<review_id>')
-def tip_page(review_id):
+def review_page(review_id):
     # Creates individual tip page. Finds the correct tip based on the
     # tips's tip_id.
     category = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     return render_template("review.html", category=category)
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    """
+    Search function on the tips.html page where the user can search any
+    word from the individual tip.
+    """
+    query = request.form.get("query")
+    category = list(mongo.db.reviews.find({"$text": {"$search": query}}))
+    return render_template("reviews.html", category=category)
 
 
 @app.route("/register", methods=["GET", "POST"])
