@@ -126,7 +126,7 @@ def logout():
     # to the reviews page.
     flash("You have been logged out")
     session.pop("user")
-    return redirect(url_for("tips"))
+    return redirect(url_for("reviews"))
 
 
 @app.route("/add_review", methods=["GET", "POST"])
@@ -184,6 +184,9 @@ def delete_review(review_id):
     flash("Review Successfully Deleted")
     return redirect(url_for(
             "profile", username=session["user"]))
+
+
+
 
 
 if __name__ == "__main__":
