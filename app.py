@@ -20,14 +20,23 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/tips")
 def tips():
-    
     # On the reviews page, every indiviudal review from the reviews
     # collection in MongoDB then sorts it in order that 
     # the review has been added,
     # newest to oldest.
-    
     category = list(mongo.db.reviews.find().sort("review_date", -1))
     return render_template("reviews.html", category=category)
+
+
+@app.route('/tips/<category_name>')
+def filter_tips(category_name):
+    # Acts as a filter on the tips.html page. User clicks on the filter and the
+    # tips with the corresponding category_name is found from the database and
+    # then displayed in order, again newest to oldest.
+    category = list(mongo.db.reviews.find({
+        "category_name": category_name}).sort("review_date", -1))
+    return render_template(
+        "reviews.html", category=category, page_title=category_name)
 
 
 if __name__ == "__main__":
