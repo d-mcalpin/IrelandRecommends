@@ -23,7 +23,7 @@
                   {% if session.user %}
                   <li><a href="#">Profile</a></li>
                   <li><a href="#">Add Review</a></li>
-                  <li><a href="#">Logout</a></li>
+                  <li><a href="{{ url_for('logout') }}">Logout</a></li>
                   {% if session.user|lower == "admin"|lower %}
                   <li><a href="#">Manage All</a></li>
                   {% endif %}               
@@ -43,7 +43,7 @@
             {% if session.user %}
             <li><a href="#">Profile</a></li>
             <li><a href="#">Add Review</a></li>
-            <li><a href="#">Logout</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
             {% if session.user|lower == "admin"|lower %}
             <li><a href="#">Manage All</a></li>
             {%endif%}                

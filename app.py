@@ -106,10 +106,8 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    """
-    First, gets the user's name from the database, and then displays
-    the relavant reviews.
-    """
+    # First, gets the user's name from the database, and then displays
+    # the relavant reviews.
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
@@ -120,6 +118,15 @@ def profile(username):
         return render_template("profile.html", username=username)
 
     return redirect(url_for("login"))
+
+
+@app.route("/logout")
+def logout():
+    # Removes user from the session cookie and redirects them
+    # to the tips page.
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("tips"))
 
 
 if __name__ == "__main__":
