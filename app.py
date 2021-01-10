@@ -40,6 +40,12 @@ def filter_reviews(category_name):
         "reviews.html", category=category, page_title=category_name)
 
 
+# holder for review page and review id
+
+
+
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
