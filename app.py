@@ -166,7 +166,7 @@ def edit_review(review_id):
             "review_date": request.form.get("review_date"),
             "created_by": session["user"],
         }
-        mongo.db.tips.update({"_id": ObjectId(review_id)}, submit)
+        mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
         flash("Review Successfully Updated")
         return redirect(url_for(
             "profile", username=session["user"]))
