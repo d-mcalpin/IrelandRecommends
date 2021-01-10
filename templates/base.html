@@ -28,7 +28,7 @@
                   <li><a href="#">Manage All</a></li>
                   {% endif %}               
                   {% else %}
-                  <li><a href="#">Login</a></li>
+                  <li><a href="{{ url_for('login') }}">Login</a></li>
                   <li><a href="{{ url_for('register') }}">Register</a></li>
                   {% endif %}
                </ul>
@@ -48,7 +48,7 @@
             <li><a href="#">Manage All</a></li>
             {%endif%}                
             {% else %}
-            <li><a href="#">Login</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
             {% endif %}
          </ul>
