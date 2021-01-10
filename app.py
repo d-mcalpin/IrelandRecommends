@@ -104,6 +104,24 @@ def login():
     return render_template("login.html")
 
 
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    """
+    First, gets the user's name from the database, and then displays
+    the relavant reviews.
+    """
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    reviews = list(mongo.db.reviews.find())
+    return render_template("profile.html", reviews=reviews)
+
+    if session["user"]:
+        return render_template("profile.html", username=username)
+
+    return redirect(url_for("login"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
