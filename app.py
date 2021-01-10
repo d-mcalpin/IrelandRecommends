@@ -40,10 +40,21 @@ def filter_reviews(category_name):
         "reviews.html", category=category, page_title=category_name)
 
 
-# holder for review page and review id
+@app.route('/review/<review_id>')
+def tip_page(review_id):
+    # Creates individual tip page. Finds the correct tip based on the
+    # tips's tip_id.
+    category = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+    return render_template("review.html", category=category)
 
 
-# holder for review search function
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    # Search function on the reviews.html page where the user can search any 
+    # word from the individual review.
+    query = request.form.get("query")
+    category = list(mongo.db.reviews.find({"$text": {"$search": query}}))
+    return render_template("reviews.html", category=category)
 
 
 @app.route("/register", methods=["GET", "POST"])
