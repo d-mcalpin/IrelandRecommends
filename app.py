@@ -186,7 +186,11 @@ def delete_review(review_id):
             "profile", username=session["user"]))
 
 
-
+@app.route("/manage_all")
+def manage_all():
+    # Loads all tips for the admin to then read/update/delete
+    all_reviews = list(mongo.db.reviews.find().sort("category_name", 1))
+    return render_template("manage_all.html", all_reviews=all_reviews)
 
 
 if __name__ == "__main__":
