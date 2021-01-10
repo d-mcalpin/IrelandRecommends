@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 {% if session.user|lower == "admin"|lower %}
-<h2 class="center-align">Manage All Tips</h2>
+<h2 class="center-align">Manage All Reviews</h2>
 <div class="container">
    <div class="row">
-      {% for tip in all_tips %}   
+      {% for review in all_reviews %}   
       <div class="col s12 m4">
          <div class="card">
             <div class="card-image">
@@ -19,7 +19,7 @@
                <p><em>Created by {{review.created_by}} on {{review.review_date}}</em></p>
             </div>
             <div class="card-button center-align">
-               <a href="{{ url_for('edit_review', tip_review=review._id) }}" class="btn-small white black-text">Edit</a>                
+               <a href="{{ url_for('edit_review', review_id=review._id) }}" class="btn-small white black-text">Edit</a>                
                <a href="#modal2{{loop.index}}" class="btn-small grey darken-4 white-text modal-trigger">Delete</a>
                <!-- Modal Structure -->
                <div id="modal2{{loop.index}}" class="modal">

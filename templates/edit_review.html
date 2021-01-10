@@ -10,7 +10,7 @@
             <select id ="category_name" name="category_name" class="validate" required>
                <option value="" disabled>Choose Category</option>
                {% for category in categories%}
-               {% if category.category_name == tip.category_name %}
+               {% if category.category_name == review.category_name %}
                <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
                {% else %}
                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
@@ -59,7 +59,7 @@
                minlength="10" maxlength="300" required>
             {{-review.review_img-}}
             </textarea>
-            <label for="review_img">Photo - Please provide a link to a photo of the tip</label>
+            <label for="review_img">Photo - Please provide a link to a photo of the review</label>
          </div>
       </div>
       <!--Select Date-->
