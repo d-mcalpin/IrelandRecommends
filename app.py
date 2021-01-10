@@ -123,10 +123,33 @@ def profile(username):
 @app.route("/logout")
 def logout():
     # Removes user from the session cookie and redirects them
-    # to the tips page.
+    # to the reviews page.
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("tips"))
+
+
+@app.route("/add_review", methods=["GET", "POST"])
+def add_review():
+    # On the add_review page, adds all of the filled in fields to the database by
+    # using the insert_one function.
+    if request.method == "POST":
+        review = {
+            "category_name": request.form.get("category_name"),
+            "review_name": request.form.get("review_name"),
+            "review_short": request.form.get("review_short"),
+            "review_long": request.form.get("review_long"),
+            "review_img": request.form.get("review_img"),
+            "review_date": request.form.get("review_date"),
+            "created_by": session["user"],
+        }
+        mongo.db.reviews.insert_one(review)
+        flash("Review Successfully Added")
+        return redirect(url_for(
+            "profile", username=session["user"]))
+
+    categories = mongo.db.categories.find().sort("review_date", -1)
+    return render_template("add_review.html", categories=categories)
 
 
 if __name__ == "__main__":
