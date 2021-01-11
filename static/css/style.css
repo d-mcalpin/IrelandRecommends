@@ -31,3 +31,41 @@ body {
 .card-action {
 	font-size: 12px;
 }
+
+.filters {
+	padding-top: 50px;
+}
+
+.filters i {
+	border: black solid 2px;
+	padding: 15px;
+	font-size: 200%;
+}
+
+.filters a i:hover {
+  color: rgba(0, 136, 122, 1);
+  border-color: rgba(0, 136, 122, 1);
+}
+
+.filters a {
+	font-size: 200%;
+}
+
+@media only screen and (max-width: 600px) {
+	.filters i {
+		border: black solid 2px;
+		padding: 10px;
+		font-size: 100%;
+	}
+	.filters a {
+		font-size: 100%;
+    }
+    .brand-logo {
+        font-size: 20%;
+    }
+}
+
+.logo {
+  height: 55px;
+  width: 55px;
+}
