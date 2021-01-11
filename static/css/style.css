@@ -69,3 +69,7 @@ body {
   height: 55px;
   width: 55px;
 }
+
+strong {
+	font-weight: 700;
+}
