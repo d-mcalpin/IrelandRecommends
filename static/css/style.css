@@ -130,3 +130,19 @@ strong {
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 }
+
+.social-icons i {
+    padding-top: 10px;
+	padding: 25px;
+	font-size: 200%;
+	color: white;
+}
+
+.social-icons i:hover {
+  color: rgba(0, 136, 122, 1);
+  border-color: rgba(0, 136, 122, 1);
+}
+
+footer .col {
+    max-height: 100px;
+}
