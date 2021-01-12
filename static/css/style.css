@@ -151,3 +151,7 @@ footer .col {
     font-size: 150%;
     color: rgba(0, 136, 122, 1);
 }
+
+.card-button {
+    padding: 15px;
+}
