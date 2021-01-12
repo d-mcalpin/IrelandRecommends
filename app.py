@@ -50,10 +50,6 @@ def review_page(review_id):
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
-    """
-    Search function on the tips.html page where the user can search any
-    word from the individual tip.
-    """
     query = request.form.get("query")
     category = list(mongo.db.reviews.find({"$text": {"$search": query}}))
     return render_template("reviews.html", category=category)

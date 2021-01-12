@@ -8,6 +8,7 @@
       <p class="uppercase btn grey darken-4">{{category.category_name}}</p>
       <h4><strong>{{ category.review_name }}</strong></h4>
       <p>{{ category.review_long }}</p>
+      <div class="center-align upvote"><a href="{{ url_for('upvotes', review_id=category._id) }}"><i class="far fa-thumbs-up">  {{category.upvotes}}</i></a></div>
       {% if created_by|lower == "admin"|lower %}
       <p><em>Edited by {{category.created_by}} on {{category.review_date}}</em></p>
       {% else %}

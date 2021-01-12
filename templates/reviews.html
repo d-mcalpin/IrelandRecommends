@@ -69,7 +69,7 @@
                <p><strong>{{ cat.review_name }}</strong></p>
                <p>{{ cat.review_short }}</p>
             </div>
-            <div class="center-align"><a href="{{ url_for('upvotes', review_id=cat._id) }}"><i class="far fa-thumbs-up">  {{cat.upvotes}}</i></a></div>
+            <div class="center-align upvote"><a href="{{ url_for('upvotes', review_id=cat._id) }}"><i class="far fa-thumbs-up"></i> {{cat.upvotes}}</a></div>
             <div class="card-action" style="padding-top:0px; padding-bottom:2px">
                {% if cat.created_by|lower == "admin"|lower %}
                <p><em>Edited by {{cat.created_by}} on {{cat.review_date}}</em></p>

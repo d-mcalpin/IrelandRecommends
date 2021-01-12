@@ -147,8 +147,12 @@ footer .col {
     max-height: 100px;
 }
 
-.card i {
+.upvote {
     font-size: 150%;
+    color: rgba(0, 136, 122, 1);
+}
+
+.upvote a {
     color: rgba(0, 136, 122, 1);
 }
 
