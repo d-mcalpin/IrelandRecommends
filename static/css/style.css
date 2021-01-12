@@ -73,3 +73,16 @@ body {
 strong {
 	font-weight: 700;
 }
+
+.tips-hero {
+	text-align: center;
+	height: 60vh;
+	background-image: url(../images/cliff-of-moher.jpg);
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	color: black;
+}
