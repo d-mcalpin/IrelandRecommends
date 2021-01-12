@@ -74,9 +74,9 @@ strong {
 	font-weight: 700;
 }
 
-.tips-hero {
+.reviews-hero {
 	text-align: center;
-	height: 60vh;
+	height: 50vh;
 	background-image: url(../images/cliff-of-moher.jpg);
 	background-size: cover;
 	-webkit-background-size: cover;
@@ -85,4 +85,23 @@ strong {
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	color: black;
+}
+
+.login-background {
+    text-align: center;
+	height: 100vh;
+	background-image: url(../images/kylemore.jpg);
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	color: black;
+}
+
+.login-background .card-panel {
+    background: rgba(255, 255, 255, 0.7);
+	padding-top: 15px;
+	margin-top: 50px;
 }
