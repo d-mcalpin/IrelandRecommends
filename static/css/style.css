@@ -146,3 +146,8 @@ strong {
 footer .col {
     max-height: 100px;
 }
+
+.card i {
+    font-size: 150%;
+    color: rgba(0, 136, 122, 1);
+}
