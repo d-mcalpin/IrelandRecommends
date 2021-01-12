@@ -19,7 +19,7 @@
          <div class="card">
             <div class="card-image">
                <a href="{{url_for('reviews', review_id=review._id)}}">
-               <img src="{{review.review_img}}" alt="{{review.review_name}}">   
+               <img onerror="this.src='static/images/coast.jpg'" src="{{review.review_img}}" alt="{{review.review_name}}">   
                </a>                 
             </div>
             <div class="card-content">

@@ -10,14 +10,14 @@
     {% block styles %}
     {% endblock %}
     <title>Ireland Recommends</title>
-    <link rel="shortcut icon" type="image/png" href="static/images/veclogo.png"/>
+    <link rel="shortcut icon" type="image/png" href="https://photos.app.goo.gl/15JWg4fKY5o9UQZQ7"/>
 </head>
 <body>
     <header>
          <!--top navbar-->
          <nav class="nav-extended text-shadow light-green darken-2">
             <div class="nav-wrapper">
-                <!-- <a href="{{ url_for('reviews') }}" class="brand-logo center white-text"><img class="logo" src="static/images/veclogo.png" alt="replace"/></a> -->
+                <a href="{{ url_for('reviews') }}" class="center brand-logo"><img class="logo" src="static/images/veclogo.png" alt="replace"/></a>
                 <a href="{{ url_for('reviews') }}" class="hide-on-small-only brand-logo center white-text">Ireland Recommends</a>
                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars white-text"></i></a>
                <ul class="right hide-on-med-and-down">
@@ -71,6 +71,7 @@
     {% block content%}
     {% endblock %}
     </main>
+    <!-- footer section -->
     <footer class="light-green darken-2">
          <div class="container" >
             <div class="row" style="margin-bottom: 0;">

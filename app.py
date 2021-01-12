@@ -206,6 +206,15 @@ def manage_all():
     return render_template("manage_all.html", all_reviews=all_reviews)
 
 
+@app.route('/upvote/<review_id>')
+def upvotes(review_id):
+    mongo.db.reviews.find_one_and_update(
+        {'_id': ObjectId(review_id)},
+        {'$inc': {'upvotes': 1}}
+    )
+    return redirect(url_for('reviews', review_id=review_id))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

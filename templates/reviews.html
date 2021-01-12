@@ -61,7 +61,7 @@
          <div class="card">
             <div class="card-image">
                <a href="{{url_for('review_page', review_id=cat._id)}}">
-               <img src="{{cat.review_img}}" alt="{{cat.review_name}}">   
+               <img onerror="this.src='static/images/coast.jpg'" src="{{cat.review_img}}" alt="{{cat.review_name}}">   
                </a>                 
             </div>
             <div class="card-content" style="padding-top:12px; padding-bottom:12px">
@@ -76,6 +76,9 @@
                <p><em>Created by {{cat.created_by}} on {{cat.review_date}}</em></p>
                {% endif %}                  
             </div>
+            <button>
+                <a href="{{ url_for('upvotes', review_id=cat._id) }}">LIKE {{cat.upvotes}}</a>
+            </button>
          </div>
       </div>
       {% endfor %}
