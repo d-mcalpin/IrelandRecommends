@@ -8,7 +8,7 @@ The Visit East Cork website is responsive and contains a number of interactive e
 
 You can view the live website here: [Ireland Recommends](https://ireland-recommends.herokuapp.com/)
 
-![Visit East Cork mockups on various devices](assets/images/mockups/vecMockup.jpg)
+![Ireland Recommends mockups on various devices](/docs/screenshots/IrelandRecommends_mockup.jpg)
 
 ## Contents
 
