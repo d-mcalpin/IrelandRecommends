@@ -20,22 +20,22 @@
          <a class="black-text " href="{{ url_for('reviews') }}#list"><i class="fas fa-street-view"></i><br>ALL</a> 
       </div>
       <div class="col s3">        
-         <a class="black-text" href="{{ url_for('filter_reviews', category_name='Eat') }}#list"><i class="fas fa-utensils"></i><br>EAT</a>
+         <a class="black-text" href="{{ url_for('reviews', category='Eat') }}"><i class="fas fa-utensils"></i><br>EAT</a>
       </div>
       <div class="col s2">
-         <a class=" black-text" href="{{ url_for('filter_reviews', category_name='Drink') }}#list"><i class="fas fa-cocktail"></i><br>DRINK</a>  
+         <a class=" black-text" href="{{ url_for('reviews', category='Drink') }}"><i class="fas fa-cocktail"></i><br>DRINK</a>  
       </div>
       <div class="col s3">  
-         <a class="black-text " href="{{ url_for('filter_reviews', category_name='Stay') }}#list"><i class="fas fa-hotel"></i><br>STAY</a>
+         <a class="black-text " href="{{ url_for('reviews', category='Stay') }}"><i class="fas fa-hotel"></i><br>STAY</a>
       </div>
       <div class="col s2">
-         <a class=" black-text" href="{{ url_for('filter_reviews', category_name='Visit') }}#list"><i class="fas fa-leaf"></i><br>VISIT</a>
+         <a class=" black-text" href="{{ url_for('reviews', category='Visit') }}"><i class="fas fa-leaf"></i><br>VISIT</a>
       </div>
    </div>
 </div>
 <div>
     <div>
-   <form action="{{ url_for('search') }}" method="post">
+   <form action="{{ url_for('reviews') }}" method="get">
       <div class="row">
          <div class="input-field col s12 m4 offset-m4 center-align">
             <i class="fas fa-search prefix"></i>
@@ -48,33 +48,33 @@
             <button type="submit" class="white black-text  btn">
             <i class="fas fa-search left"></i>Search
             </button>
-            <a href="{{ url_for('reviews')}}" class="grey darken-4 white-text btn">Reset</a>
+            <a href="{{ url_for('reviews')}}" class="light-green darken-2 white-text btn">Reset</a>
          </div>
       </div>
    </form>
 </div>
-{% if category|length > 0 %}
+{% if reviews|length > 0 %}
 <div class="container" >
    <div class="row">
-      {% for cat in category %}    
+      {% for review in reviews %}    
       <div class="col s12 m4">
          <div class="card">
             <div class="card-image">
-               <a href="{{url_for('review_page', review_id=cat._id)}}">
-               <img onerror="this.src='static/images/coast.jpg'" src="{{cat.review_img}}" alt="{{cat.review_name}}">   
+               <a href="{{url_for('review_page', review_id=review._id)}}">
+               <img onerror="this.src='static/images/coast.jpg'" src="{{review.review_img}}" alt="{{review.review_name}}">   
                </a>                 
             </div>
             <div class="card-content" style="padding-top:12px; padding-bottom:12px">
-               <p class="uppercase">{{cat.category_name}}</p>
-               <p><strong>{{ cat.review_name }}</strong></p>
-               <p>{{ cat.review_short }}</p>
+               <p class="uppercase">{{review.category_name}}</p>
+               <p><strong>{{ review.review_name }}</strong></p>
+               <p>{{ review.review_short }}</p>
             </div>
-            <div class="center-align upvote"><a href="{{ url_for('upvotes', review_id=cat._id) }}"><i class="far fa-thumbs-up"></i> {{cat.upvotes}}</a></div>
+            <div class="center-align upvote"><a href="{{ url_for('upvotes', review_id=review._id) }}"><i class="far fa-thumbs-up"></i> {{review.upvotes}}</a></div>
             <div class="card-action" style="padding-top:0px; padding-bottom:2px">
-               {% if cat.created_by|lower == "admin"|lower %}
-               <p><em>Edited by {{cat.created_by}} on {{cat.review_date}}</em></p>
+               {% if review.created_by|lower == "admin"|lower %}
+               <p><em>Edited by {{review.created_by}} on {{review.review_date}}</em></p>
                {% else %}
-               <p><em>Created by {{cat.created_by}} on {{cat.review_date}}</em></p>
+               <p><em>Created by {{review.created_by}} on {{review.review_date}}</em></p>
                {% endif %}                  
             </div>
          </div>

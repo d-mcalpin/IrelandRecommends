@@ -159,3 +159,9 @@ footer .col {
 .card-button {
     padding: 15px;
 }
+
+.card-content {
+    min-height: 120px;
+    max-height: 120px;
+    overflow: hidden;
+}

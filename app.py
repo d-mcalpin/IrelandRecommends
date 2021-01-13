@@ -25,25 +25,23 @@ def reviews():
     # collection in MongoDB then sorts it in order that
     # the review has been added,
     # newest to oldest.
-    category = list(mongo.db.reviews.find().sort("review_date", -1))
-    return render_template("reviews.html", category=category)
-
-
-@app.route('/reviews/<category_name>')
-def filter_reviews(category_name):
-    # Acts as a filter on the tips.html page. User clicks on the filter and the
-    # tips with the corresponding category_name is found from the database and
-    # then displayed in order, again newest to oldest.
-    category = list(mongo.db.reviews.find({
-        "category_name": category_name}).sort("review_date", -1))
-    return render_template(
-        "reviews.html", category=category, page_title=category_name)
+    query = request.args.get("query")
+    category_name = request.args.get("category")
+    reviews = []
+    if query is not None:
+        reviews = list(mongo.db.reviews.find({"$text": {"$search": query}}))
+    elif category_name is not None:
+        reviews = list(mongo.db.reviews.find({
+                "category_name": category_name}).sort("review_date", -1))
+    else:
+        reviews = list(mongo.db.reviews.find().sort("review_date", -1))
+    return render_template("reviews.html", reviews=reviews)
 
 
 @app.route('/review/<review_id>')
 def review_page(review_id):
-    # Creates individual tip page. Finds the correct tip based on the
-    # tips's tip_id.
+    # Creates individual review page. Finds the correct tip based on the
+    # reviews's review_id.
     category = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     return render_template("review.html", category=category)
 
@@ -150,6 +148,7 @@ def add_review():
             "review_long": request.form.get("review_long"),
             "review_img": request.form.get("review_img"),
             "review_date": request.form.get("review_date"),
+            "upvotes": 0,
             "created_by": session["user"],
         }
         mongo.db.reviews.insert_one(review)

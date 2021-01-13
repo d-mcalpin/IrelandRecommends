@@ -1,20 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="row review-card">
+<div class="row review-card valign-wrapper">
    <div class="col s12 l6">       
       <img onerror="this.src='static/images/coast.jpg'" src="{{category.review_img}}" alt="{{category.review_name}}">   
    </div>
-   <div class="col s12 l6 center-align">
-      <p class="uppercase btn grey darken-4">{{category.category_name}}</p>
-      <h4><strong>{{ category.review_name }}</strong></h4>
-      <p>{{ category.review_long }}</p>
-      <div class="center-align upvote"><a href="{{ url_for('upvotes', review_id=category._id) }}"><i class="far fa-thumbs-up">  {{category.upvotes}}</i></a></div>
+   <div class="col s12 l6 left-align">
+      
+      <h4 class="left-align"><strong>{{ category.review_name }}</strong></h4>
+      <p class="left-align">{{ category.review_long }}</p>
+      <div class="left-align upvote"><a href="{{ url_for('upvotes', review_id=category._id) }}"><i class="far fa-thumbs-up"></i> {{category.upvotes}}</a></div>
       {% if created_by|lower == "admin"|lower %}
-      <p><em>Edited by {{category.created_by}} on {{category.review_date}}</em></p>
+      <p class="left-align"><em>Edited by {{category.created_by}} on {{category.review_date}}</em></p>
       {% else %}
-      <p><em>Created by {{category.created_by}} on {{category.review_date}}</em></p>
+      <p class="left-align"><em>Created by {{category.created_by}} on {{category.review_date}}</em></p>
       {% endif %}   
-      <a class="btn grey darken-4" href="{{ url_for('reviews') }}">Return to home</a>      
+      <a class="btn light-green darken-2 left-align" href="{{ url_for('reviews') }}">Return to home</a>      
    </div>
 </div>
 {% endblock %}
