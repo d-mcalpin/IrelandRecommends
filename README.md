@@ -1,12 +1,12 @@
-![Visit East Cork logo](assets/images/mockups/readmeLogo.png)
+![Ireland Recommends Logo](/static/images/veclogo.png)
 
-# Milestone 2 Project - Visit East Cork
+# Milestone 3 Project - Ireland Recommends
 
-The purpose of this project is to develop an interactive frontend website that promotes the area of East Cork in the South of Ireland. Visit East Cork is a business to consumer website that serves the dual purpose of advertising select companies or activities in the East Cork area but also allows users to discover information themselves and contact the website owner for more information.
+The purpose of this project is to develop an interactive website where users can create, read, update and delete reviews on places to eat, drink, stay and visit in Ireland. This website will allow users to both get and give recommendations and is designed to be responsive and accessible on desktop and mobile devices.
 
 The Visit East Cork website is responsive and contains a number of interactive elements including its main functionality based on the Google Maps Javascript API. Elements of this website were developed from the Code Institute coursework as well recommendations from my mentor and independent online research and observations.
 
-You can view the live website here: [Visit East Cork](https://d-mcalpin.github.io/Visit-East-Cork/)
+You can view the live website here: [Ireland Recommends](https://ireland-recommends.herokuapp.com/)
 
 ![Visit East Cork mockups on various devices](assets/images/mockups/vecMockup.jpg)
 
