@@ -162,8 +162,8 @@ def add_review():
 
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
-    # Loads the review that has already been added and then uses the update
-    # function by selecting the correct review_id.
+    '''Loads the review that has already been added and then uses the update
+    function by selecting the correct review_id.'''
     if request.method == "POST":
         submit = {
             "category_name": request.form.get("category_name"),
@@ -187,7 +187,7 @@ def edit_review(review_id):
 
 @app.route("/delete_review/<review_id>")
 def delete_review(review_id):
-    # Deletes the review by finding the matching review using review_id.
+    '''Deletes the review by finding the matching review using review_id.'''
     mongo.db.reviews.remove({"_id": ObjectId(review_id)})
     flash("Review Successfully Deleted")
     return redirect(url_for(
@@ -196,7 +196,7 @@ def delete_review(review_id):
 
 @app.route("/manage_all")
 def manage_all():
-    # Loads all tips for the admin to then read/update/delete
+    '''Loads all tips for the admin to then read/update/delete'''
     all_reviews = list(mongo.db.reviews.find().sort("category_name", 1))
     return render_template("manage_all.html", all_reviews=all_reviews)
 
@@ -208,6 +208,24 @@ def upvotes(review_id):
         {'$inc': {'upvotes': 1}}
     )
     return redirect(url_for('reviews', review_id=review_id))
+
+
+@app.errorhandler(403)
+def forbidden(error):
+    '''Handles 403 errors'''
+    return render_template('errors/403.html'), 403
+
+
+@app.errorhandler(404)
+def not_found(error):
+    '''Handles 404 errors'''
+    return render_template('errors/404.html'), 404
+
+
+@app.errorhandler(500)
+def internal_error(error):
+    '''Handles 500 errors'''
+    return render_template('errors/500.html'), 500
 
 
 if __name__ == "__main__":
