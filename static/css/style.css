@@ -10,6 +10,8 @@ body {
 	text-transform: uppercase;
 }
 
+/* Styling for card panels and review cards including text and images */
+
 .card-image img {
 	height: 30vh;
 	-o-object-fit: cover;
@@ -32,6 +34,31 @@ body {
 .card-action {
 	font-size: 12px;
 }
+
+.card-panel {
+    background: rgba(255, 255, 255, 0.7);
+	padding-top: 15px;
+	margin-top: 50px;
+}
+
+.card-button {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.card-content {
+    min-height: 120px;
+    max-height: 120px;
+    overflow: hidden;
+}
+
+.review-card {
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
+
+
+/* Styling for filters on reviews page including styling for mobile view */
 
 .filters {
 	padding-top: 50px;
@@ -66,6 +93,8 @@ body {
     }
 }
 
+/* Styling for navbar and logo */
+
 .logo {
   height: 55px;
   width: 55px;
@@ -78,6 +107,8 @@ body {
 strong {
 	font-weight: 700;
 }
+
+/* Hero images and styling as well as auto prefix for multiple browsers */
 
 .reviews-hero {
 	text-align: center;
@@ -105,12 +136,6 @@ strong {
 	color: black;
 }
 
-.card-panel {
-    background: rgba(255, 255, 255, 0.7);
-	padding-top: 15px;
-	margin-top: 50px;
-}
-
 .register-background {
     text-align: center;
 	height: 90vh;
@@ -136,6 +161,8 @@ strong {
 	background-position: 50% 50%;
 }
 
+/* Styling for social media icons in footer */
+
 .social-icons i {
     padding-top: 10px;
 	padding: 25px;
@@ -152,6 +179,8 @@ footer .col {
     max-height: 100px;
 }
 
+/* Styling for upvote counter or "Like Button" */
+
 .upvote {
     font-size: 150%;
     color: rgba(0, 136, 122, 1);
@@ -161,25 +190,15 @@ footer .col {
     color: rgba(0, 136, 122, 1);
 }
 
-.card-button {
-    padding: 15px;
-}
-
-.card-content {
-    min-height: 120px;
-    max-height: 120px;
-    overflow: hidden;
-}
+/* Styling for individual review pages including mobile view */
 
 .review-text {
     margin-top: 50px;
 }
 
-.review-card {
-    margin-top: 90px;
-    margin-bottom: 90px;
+.review-card h4 {
+    margin-top: 0px;
 }
-
 
 @media screen and (max-width: 600px) {
 	.review-text {
@@ -189,4 +208,8 @@ footer .col {
     margin-top: 0px;
     margin-bottom: 15px;
 }
+}
+
+.review-btn {
+    margin-left: 10px;
 }
