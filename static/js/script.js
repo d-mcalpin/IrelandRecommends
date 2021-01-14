@@ -1,3 +1,4 @@
+//  The below code is taken from the Materialize library - Please see README for more info
  $(document).ready(function(){
     $('.sidenav').sidenav({edge: "right"});
     $('select').formSelect();
@@ -10,7 +11,6 @@
         }
     });
     $('.modal').modal();
-
      //This function has been taken from the Code Institute Task Manager project
     validateMaterializeSelect();
         function validateMaterializeSelect() {
