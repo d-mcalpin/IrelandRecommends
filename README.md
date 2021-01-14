@@ -4,7 +4,7 @@
 
 The purpose of this project is to develop an interactive website where users can create, read, update and delete reviews on places to eat, drink, stay and visit in Ireland. This website will allow users to both get and give recommendations and is designed to be responsive and accessible on desktop and mobile devices.
 
-The Visit East Cork website is responsive and contains a number of interactive elements including its main functionality based on the Google Maps Javascript API. Elements of this website were developed from the Code Institute coursework as well recommendations from my mentor and independent online research and observations.
+Elements of this website were developed from the Code Institute coursework as well recommendations from my mentor and independent online research and observations.
 
 You can view the live website here: [Ireland Recommends](https://ireland-recommends.herokuapp.com/)
 
@@ -23,10 +23,10 @@ You can view the live website here: [Ireland Recommends](https://ireland-recomme
 
 ## 1. User Experience
 
-Visit East Cork is a business to consumer website that allows users to discover the local area of East Cork and find out about local facilities, businesses and attractions. The Google Maps element contains a number of custom markers with info windows that can be edited. This would allow the website owner the opportunity to generate advertising revenue from recommended locations in the area while also allowing website users the opportunity to interact with the map and find out more information about the area themselves.
+Ireland Recommends is a consumer to consumer website that allows users to filter and read other users reviews as well as create, edit and delete their own reviews of tourism focused establishments in Ireland.
 
 ### 1.1 User Stories
-- As a local business owner in the East Cork area, I can showcase my business on the Visit East Cork homepage via the Google Maps API interface. This can display images, information and links about my business. 
+- As a read only or first time user, I am able to easily navigate the Ireland Recommends website
 
 - As a tourist seeking to find more information about East Cork, I can interact with the map aswell as reading the information about local areas displayed on the homepage. Should I wish to find out more information I can contact the website owner directly from the contact form. I can also view the current weather forecast in Cork.
 
