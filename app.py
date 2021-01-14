@@ -21,13 +21,16 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/reviews")
 def reviews():
-    # On the reviews page, every indiviudal review from the reviews
-    # collection in MongoDB then sorts it in order that
-    # the review has been added,
-    # newest to oldest.
+    '''On the reviews page, this code gets every
+    indiviudal review from the reviews
+    collection in MongoDB then sorts it in order
+    that the review has been added.'''
     query = request.args.get("query")
+    '''Then allows filters to refine reviews by category.'''
     category_name = request.args.get("category")
     reviews = []
+    '''When the search function is called the
+    MongoDB database is queried for the search term'''
     if query is not None:
         reviews = list(mongo.db.reviews.find({"$text": {"$search": query}}))
     elif category_name is not None:
@@ -40,25 +43,18 @@ def reviews():
 
 @app.route('/review/<review_id>')
 def review_page(review_id):
-    # Creates individual review page. Finds the correct tip based on the
-    # reviews's review_id.
+    '''Creates individual review page. Finds the correct tip based on the
+    reviews's review_id.'''
     category = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     return render_template("review.html", category=category)
 
 
-@app.route("/search", methods=["GET", "POST"])
-def search():
-    query = request.form.get("query")
-    category = list(mongo.db.reviews.find({"$text": {"$search": query}}))
-    return render_template("reviews.html", category=category)
-
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    # On the register page, initially checks if the username already exists
-    # in the database and flashes a message if so. Werkzeug is used to hash the
-    # password and post it to the database. The new user info is then formed
-    # into a session cookie.
+    '''On the register page, initially checks if the username already exists
+    in the database and flashes a message if so. Werkzeug is used to hash the
+    password and post it to the database. The new user info is then formed
+    into a session cookie.'''
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
@@ -83,10 +79,10 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    # Initially checks to see if the username already exists in the
-    # database. If so, the hashed password is then checked to match
-    # user input. If not correct, a message if flashed and the user is
-    # redirected. If the username is not found, they are also redirected.
+    '''Initially checks to see if the username already exists in the
+    database. If so, the hashed password is then checked to match
+    user input. If not correct, a message if flashed and the user is
+    redirected. If the username is not found, they are also redirected.'''
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
@@ -113,8 +109,8 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # First, gets the user's name from the database, and then displays
-    # the relavant reviews.
+    '''First, gets the user's name from the database, and then displays
+    the relavant reviews.'''
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
@@ -129,8 +125,8 @@ def profile(username):
 
 @app.route("/logout")
 def logout():
-    # Removes user from the session cookie and redirects them
-    # to the reviews page.
+    '''Removes user from the session cookie and redirects them
+    to the reviews page.'''
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("reviews"))
@@ -138,8 +134,8 @@ def logout():
 
 @app.route("/add_review", methods=["GET", "POST"])
 def add_review():
-    # On the add_review page, adds all of the filled in fields to the database by
-    # using the insert_one function.
+    '''On the add_review page, adds all of the filled in
+    fields to the database by using the insert_one function.'''
     if request.method == "POST":
         review = {
             "category_name": request.form.get("category_name"),
@@ -196,13 +192,15 @@ def delete_review(review_id):
 
 @app.route("/manage_all")
 def manage_all():
-    '''Loads all tips for the admin to then read/update/delete'''
+    '''Loads all reviews for the admin to then read/update/delete'''
     all_reviews = list(mongo.db.reviews.find().sort("category_name", 1))
     return render_template("manage_all.html", all_reviews=all_reviews)
 
 
 @app.route('/upvote/<review_id>')
 def upvotes(review_id):
+    '''When users click the upvote button, the upvotes integer
+     in MongoDB is incremented by 1'''
     mongo.db.reviews.find_one_and_update(
         {'_id': ObjectId(review_id)},
         {'$inc': {'upvotes': 1}}
