@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="row review-card valign-wrapper">
-   <div class="col s12 l6">       
+<div class="row review-card">
+   <div class="col s12 m6 valign-wrapper review-img">       
       <img onerror="this.src='static/images/coast.jpg'" src="{{category.review_img}}" alt="{{category.review_name}}">   
    </div>
-   <div class="col s12 l6 left-align">
-      
+   <div class="col s12 m6 review-text">
       <h4 class="left-align"><strong>{{ category.review_name }}</strong></h4>
       <p class="left-align">{{ category.review_long }}</p>
       <div class="left-align upvote"><a href="{{ url_for('upvotes', review_id=category._id) }}"><i class="far fa-thumbs-up"></i> {{category.upvotes}}</a></div>
