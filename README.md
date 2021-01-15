@@ -1,4 +1,4 @@
-![Ireland Recommends Logo](/static/images/veclogo.png)
+![Ireland Recommends Logo]()
 
 # Milestone 3 Project - Ireland Recommends
 
@@ -26,17 +26,19 @@ You can view the live website here: [Ireland Recommends](https://ireland-recomme
 Ireland Recommends is a consumer to consumer website that allows users to filter and read other users reviews as well as create, edit and delete their own reviews of tourism focused establishments in Ireland.
 
 ### 1.1 User Stories
-- As a read only or first time user, I am able to easily navigate the Ireland Recommends website
+- As a read only or first time user, I am able to easily navigate the Ireland Recommends website. I can view reviews posted by other users and filter or search for reviews from the homepage. I can also "like" reviews left by other users. Should I wish to leave a review I can easily register as a user of the site and login without diffciulty. From my profile page, I can add a review and see it posted.
 
-- As a tourist seeking to find more information about East Cork, I can interact with the map aswell as reading the information about local areas displayed on the homepage. Should I wish to find out more information I can contact the website owner directly from the contact form. I can also view the current weather forecast in Cork.
+- As a regular user, I can log in to the Ireland Recommends site easily and view my posted reviews. I can edit or delete reviews that I have posted in the past as well as add new reviews.
 
-- As a local resident of East Cork, I can interact with the Visit East Cork website to find out more information about my local area, particularly relating to attractions or facilities that I may not know about. I can also view the local weather forecast and contact the site owner if I have any queries.
+- As an administrator of the site, I can log in to the site as an admin user and view all reviews that have been posted by users. I can also edit or delete any review posted by users.
 
 ### 1.2 Strategy
-The goal of the project is to create an informative website that has the potential to generate revenue for the website owner through sponsored recommendations visible on the Google Maps API. The website intends to keep users interested through continuously updated local information with the potential to offer special deals on local businesses to website users.
+The goal of this project is to create an interactive website where users can view reviews, upvote their popularity, add their own reviews and then edit or delete those reviews at any time. An administrator can edit or delete any reviews posted by users on the site. Ireland Recomments uses the Flask framework and is connected to a MongoDB database for the creation, reading, updating and deleting of information present on the site.
 
 ### 1.3 Scope 
-All of Visit East Cork's content is contained within a single webpage. Users do not have to navigate away from the page to use different elements including contacting the website owner and interacting with the Google Maps API. Elements of the homepage are interactive including the buttons which showcase the local area. These toggle information and interact with the map to show users where these areas are located.
+Ireland Recommends's content is located on multiple pages including:
+* Base HTML
+    - The base template contains a Navbar that utilises an IF Statment which changes the links displayed depending on whether a user is logged in or out or if they are an administrator. The navbar is fixed to the top of the page when a user scrolls on each page. Using Materialize, the navbar is responsive on small screens and converts to an interactive burger icon. This icon triggers
 
 ### 1.4 Structure
 Based on the Scope Plane, Visit East Cork was developed to provide users with information within moments of arriving at the page. A welcome image entices users to scroll down and the Google Maps API invites them to click on custom markers to discover the local area. A contact form and contact information is within a scroll of the map.

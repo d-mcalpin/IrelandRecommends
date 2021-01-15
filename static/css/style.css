@@ -71,8 +71,8 @@ body {
 }
 
 .filters a i:hover {
-  color: rgba(0, 136, 122, 1);
-  border-color: rgba(0, 136, 122, 1);
+  color: #9ccc65;
+  border-color: #9ccc65;
 }
 
 .filters a {
@@ -171,8 +171,8 @@ strong {
 }
 
 .social-icons i:hover {
-  color: rgba(0, 136, 122, 1);
-  border-color: rgba(0, 136, 122, 1);
+  color: #33691e;
+  border-color: #33691e;
 }
 
 footer .col {
@@ -187,7 +187,7 @@ footer .col {
 }
 
 .upvote a {
-    color: rgba(0, 136, 122, 1);
+    color: #9ccc65;
 }
 
 /* Styling for individual review pages including mobile view */
