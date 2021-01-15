@@ -261,7 +261,9 @@ to the site for each individual review.
     - <p ><img src="docs/screenshots/GTMetrix.jpg">
 
 ### 4.6 Bugs
-
+I encountered the following bugs while developing the Ireland Recommends website:
+- When users were submitting a review, they could select any date using a date picker from Materialize. In order to acurately record the date, my mentor recommended that this should be automated using Python. It took some time to find the correct format but I eventually got the code to record dates accurately.
+- 
 
 <span id="deploy"></span>
 
@@ -326,23 +328,45 @@ Click on **Open app** in the right corner of your Heroku account. The app wil op
 
 ***
 <span id="credit"></span>
+
 ## 6. Credits
 
 ### 6.1 Content
+The design and style of my project was initially inspired by elements of the following project:
+- [adamdelancey's Milestone 3 Project, Tips ](https://github.com/adamdelancey/ms3-tips)
+Some README content and layout was also inspired by the following project:
+- [juanstelling's Milestone 3 Project, Breaktasty](https://github.com/juanstelling/MS3_breaktasty/blob/master/README.md)
 
+The following sources were used for code snippets or inspiration throughout the project:
+
+- Initial instructions for setting up the site were taken from the Task Manager walkthrough from the [Code Institute](https://codeinstitute.net/) Full Stack Developer Course.
+- The Navbar, Forms and Cards have been selected from [Materialize](https://materializecss.com/) templates and adapted using CSS.
+- Code for replacing images with a default generic image was inspired by the following post on [CodeSpeedy](https://www.codespeedy.com/set-default-image-if-image-url-is-broken-in-javascript/)
+- Code for creating the upvote "Like" python function was advised by ShaneMuir_Alumni in the Code Institute Slack Community as well as [this thread](https://stackoverflow.com/questions/12147686/storing-upvotes-downvotes-in-mongodb) on Stack Overflow
+- Integration of category filtering and the search function into the Reviews python application was advised by my mentor, Oluwafemi Medale
+- Code for automatically generating the Review posting date was inspired by the following from [Programiz](https://www.programiz.com/python-programming/datetime/current-datetime)
 
 ### 6.2 Media
 
-- **Images**
-    
-- **Text**
-    
+**Images**
+- The Ireland Recommends Logo was sourced from PlumePloume on Pixabay, available [here](https://pixabay.com/vectors/triskell-symbol-celtic-logo-1194004/)
+- The following images were sourced from free to use content on Pixabay: 
+    - [CLiffs of Moher](https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2371819)
+    - [Kylemore Abbey](https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2408435)
+    - [The Skelligs](https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3640168)
+ 
+ 
+**Fonts and Icons**
+- Fonts are from [Google Fonts](https://fonts.google.com/) and icons from [Font Awesome](https://fontawesome.com/)
 
-- **Mockups**
+**Mockups**
+- Mockups were generated using [ami.responsivedesign.is](ami.responsivedesign.is)
     
 
 ### 6.3 Acknowledgements
-
+- **Oluwafemi Medale** (My Mentor) - Thank you for your assistance with this project.
+- **The Code Institute Slack Community** - The community was a great source of inspiration and assistance throughout the project.
+- **My family** for their assistance testing the website and adding reviews.
 
 
 ***
