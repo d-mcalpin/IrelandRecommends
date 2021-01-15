@@ -86,7 +86,7 @@ Ireland Recommends is a consumer to consumer website that allows users to filter
 #### Possible Features Left to Implement
 
 ### 1.4 Structure
-- The Ireland Recommends site is split into seperate pages for each function. For all users, different pages exist for the home, reviews, login and register page. For a logged in user, the Profile and Edit Tip page exists, and for the Manage all page exists for the administrator. Each page has the same footer and the responsive Navbar to ensure a consistent user experience across the site.
+- The Ireland Recommends site is split into seperate pages for each function. For all users, different pages exist for the home, reviews, login and register page. For a logged in user, the Profile and Edit Review page exists, and the Manage All page exists for the administrator. Each page has the same footer and the responsive Navbar to ensure a consistent user experience across the site.
 
 ### 1.5 Skeleton
 A mobile first approach was taken to designing the website. The original wireframes were created using Balsamiq and can be found below:
@@ -267,6 +267,62 @@ to the site for each individual review.
 
 ## 5. Deployment
 
+### Requirements 
+- Python3 
+- Github account 
+- MongoDB account 
+- Heroku account
+
+### Clone Ireland Recommends from GitHub
+To make a local clone and deploy this project in your GitHub Desktop, follow these steps. 
+1. Log in to GitHub and go to the repository. 
+2. Click on the green button with the text **“Code”.**
+3. Click on **“Open with GitHub Desktop”** and follow the prompts in the GitHub Desktop Application or follow the instructions from **[this link](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop)** to see how to clone the repository in other ways. 
+
+### Working with the local copy
+1. Install all the requirements: Go to the workspace of your local copy. In the terminal window of your IDE type: **pip3 install -r requirements.txt**.
+2. Create a database in MongoDB  
+    - Signup or login to your MongoDB account.
+    - Create a cluster and a database.
+    - Create three collections in the db: **categories, reviews and users.**
+    - Add string values for the collections. See <a href="#data">my data architecture</a> above for an exapmple of how the database is set up for this project.
+3. Create the environment variables 
+    - Create a .gitignore file in the root directory of the project.
+    - Add the env.py file in the .gitignore.
+    - Create the file env.py. This  will contain all the environment variables.
+    ```
+    Import os
+    os.environ.setdefault("IP", "0.0.0.0")
+    os.environ.setdefault("PORT", "5000")
+    os.environ.setdefault("SECRET_KEY", "YOUR_SECRET_KEY")
+    os.environ.setdefault("MONGO_URI", "YOUR_MONGODB_URI")
+    os.environ.setdefault("MONGO_DBNAME", "YOUR_DATABASE_NAME")
+    ```
+4. Run the app: Open your terminal window in your IDE. Type python3 app.py and run the app.
+
+#### Heroku Deployment  
+1. Set up local workspace for Heroku 
+    - In terminal window of your IDE type: **pip3 freeze -- local > requirements.txt.** (The file is needed for Heroku to know which filed to install)
+    - In termial window of your IDE type: **echo web: python run.py > Procfile** (Heroku needs this file to launch the app)
+2. Set up Heroku: create a Heroku account, create a new app and select your region. 
+3. Deployment method will be 'Github'
+    - Click on the **Connect to GitHub** section in the deploy tab in Heroku. 
+        - Search your repository to connect with it.
+        - When your repository appears click on **connect** to connect your repository with the Heroku. 
+    - Go to the settings app in Heroku and go to **Config Vars**. Click on **Reveal Config Vars**.
+        - Enter the variables contained in your env.py file. it is about: **IP, PORT, SECRET_KEY, MONGO_URI, MONGO_DBNAME**
+4. Push the requirements.txt and Procfile to repository. 
+     ```
+    $ git add requirements.txt
+    $ git commit -m "Add requirements.txt"
+
+    $ git add Procfile 
+    $ git commit -m "Add Procfile"
+    ```
+5. Automatic deployment: Go to the deploy tab in Heroku and scroll down to **Automatic Deployments**. Click on **Enable Automatic Deploys**. By **Manual Deploy** click on **Deploy Branch**.
+
+Heroku will receive the code from Github and host the app using the required packages. 
+Click on **Open app** in the right corner of your Heroku account. The app wil open and the live link is available from the address bar. 
 
 ***
 <span id="credit"></span>
