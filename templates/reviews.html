@@ -63,19 +63,23 @@
         {% for review in reviews %}
         <div class="col s12 m4">
             <div class="card">
-                <div class="card-image">
-                    <a href="{{url_for('review_page', review_id=review._id)}}">
-                        <img onerror="this.src='static/images/coast.jpg'" src="{{review.review_img}}"
+                <a href="{{url_for('review_page', review_id=review._id)}}">
+                    <div class="card-image">
+                        <img onerror="this.src='/static/images/coast.jpg'" src="{{review.review_img}}"
                             alt="{{review.review_name}}">
-                    </a>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>{{ review.review_name }}</strong></p>
+                        <p>{{ review.review_short }}</p>
+                    </div>
+                </a>
+                <div class="left-align upvote">
+                    <div class="chip">
+                        {{review.category_name}}
+                    </div>
+                    <a href="{{ url_for('upvotes', review_id=review._id) }}"><i class="far fa-thumbs-up"></i>
+                        {{review.upvotes}}</a>
                 </div>
-                <div class="card-content" style="padding-top:12px; padding-bottom:12px">
-                    <p class="uppercase">{{review.category_name}}</p>
-                    <p><strong>{{ review.review_name }}</strong></p>
-                    <p>{{ review.review_short }}</p>
-                </div>
-                <div class="center-align upvote"><a href="{{ url_for('upvotes', review_id=review._id) }}"><i
-                            class="far fa-thumbs-up"></i> {{review.upvotes}}</a></div>
                 <div class="card-action" style="padding-top:0px; padding-bottom:2px">
                     {% if review.created_by|lower == "admin"|lower %}
                     <p><em>Edited by {{review.created_by}} on {{review.review_date}}</em></p>

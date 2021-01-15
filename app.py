@@ -2,6 +2,7 @@ import os
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
+from datetime import date
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -143,7 +144,7 @@ def add_review():
             "review_short": request.form.get("review_short"),
             "review_long": request.form.get("review_long"),
             "review_img": request.form.get("review_img"),
-            "review_date": request.form.get("review_date"),
+            "review_date": date.today().strftime("%d/%m/%Y"),
             "upvotes": 0,
             "created_by": session["user"],
         }
@@ -205,7 +206,7 @@ def upvotes(review_id):
         {'_id': ObjectId(review_id)},
         {'$inc': {'upvotes': 1}}
     )
-    return redirect(url_for('reviews', review_id=review_id))
+    return redirect(url_for('reviews'))
 
 
 @app.errorhandler(403)

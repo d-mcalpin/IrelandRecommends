@@ -27,12 +27,9 @@ body {
 }
 
 .card-action {
-	padding-top: 0px;
-	padding-bottom: 0px;
-}
-
-.card-action {
-	font-size: 12px;
+	padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    font-size: 12px;
 }
 
 .card-panel {
@@ -46,10 +43,18 @@ body {
     padding-bottom: 15px;
 }
 
-.card-content {
-    min-height: 120px;
-    max-height: 120px;
+.card {
+    min-height: 450px;
+    max-height: 450px;
     overflow: hidden;
+}
+
+.card-content {
+    min-height: 130px;
+    max-height: 130px;
+    overflow: hidden;
+    color: #000000;
+    padding-bottom: 10px !important;
 }
 
 .review-card {
@@ -182,6 +187,7 @@ footer .col {
 /* Styling for upvote counter or "Like Button" */
 
 .upvote {
+    padding-left: 24px;
     font-size: 150%;
     color: rgba(0, 136, 122, 1);
 }
