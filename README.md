@@ -38,7 +38,7 @@ Ireland Recommends is a consumer to consumer website that allows users to filter
     - I can edit or delete reviews that I have posted in the past as well as add new reviews.
 
 - As an administrator of the site:
-    -I can log in to the site as an admin user and view all reviews that have been posted by users. 
+    - I can log in to the site as an admin user and view all reviews that have been posted by users. 
     - I can also edit or delete any review posted by users.
 
 ### 1.2 Strategy
@@ -49,44 +49,44 @@ Ireland Recommends is a consumer to consumer website that allows users to filter
 #### Current Features
 
 **Base HTML**
-    - The base template contains a Navbar that utilises an IF Statment which changes the links displayed depending on whether a user is logged in or out or if they are an administrator. The navbar is fixed to the top of the page when a user scrolls on each page. Using Materialize, the navbar is responsive on small screens and converts to an interactive burger icon. This icon triggers a menu that slides from the right hand side of the screen. It is easy to use and visually appealing.
-    - Flash messages are displayed using Flask's flash feauture. This feature displays messages to the user when they interract with the site.
-    - A footer is also contained in the base template. Social media icons are located in the footer. For the purpose of this project these icons are linked to the each social media sites homepage which opens in a seperate tab.
+- The base template contains a Navbar that utilises an IF Statment which changes the links displayed depending on whether a user is logged in or out or if they are an administrator. The navbar is fixed to the top of the page when a user scrolls on each page. Using Materialize, the navbar is responsive on small screens and converts to an interactive burger icon. This icon triggers a menu that slides from the right hand side of the screen. It is easy to use and visually appealing.
+- Flash messages are displayed using Flask's flash feauture. This feature displays messages to the user when they interract with the site.
+- A footer is also contained in the base template. Social media icons are located in the footer. For the purpose of this project these icons are linked to the each social media sites homepage which opens in a seperate tab.
 
 **Reviews Page**
-    - The reviews page is the main landing page of the Ireland Recommends site. It contains the base template content as well as a hero image and the following elements. 
-    - Filter icons are located below the hero image on the reviews page, these filters allow users to see reviews from the four categories associated with the filters.
-    - In order to improve a the sites usability and user experience, a search bar located below the filters allows users to search for keywords within the reviews and display the related reviews on the page.
-    - Each review is displayed on a card that is generated using a Jinja for loop. The card is tyled using Materialize and contains an image relating to the review, a short description of the review, the review date and a "Like" upvote button. Using a Python sort function, cards are displayed with the newest review first.
+- The reviews page is the main landing page of the Ireland Recommends site. It contains the base template content as well as a hero image and the following elements. 
+- Filter icons are located below the hero image on the reviews page, these filters allow users to see reviews from the four categories associated with the filters.
+- In order to improve a the sites usability and user experience, a search bar located below the filters allows users to search for keywords within the reviews and display the related reviews on the page.
+- Each review is displayed on a card that is generated using a Jinja for loop. The card is tyled using Materialize and contains an image relating to the review, a short description of the review, the review date and a "Like" upvote button. Using a Python sort function, cards are displayed with the newest review first.
 
 **Individual Review Page**    
-    - Each review card is linked to an indiviudal review page. This page contains a simple layout featuring a large image associated with the review, the review name, its long description and the details of the user that added or edited the review. When a user is logged in to the site, they have the ability to edit or their delete the review if they are the user who originally posted it. In addition, there is a 'return to home' button which acts as an additional navigation option for ease of use. 
+ - Each review card is linked to an indiviudal review page. This page contains a simple layout featuring a large image associated with the review, the review name, its long description and the details of the user that added or edited the review. When a user is logged in to the site, they have the ability to edit or their delete the review if they are the user who originally posted it. In addition, there is a 'return to home' button which acts as an additional navigation option for ease of use. 
 
 **Login / Register Page**
-    - A simple card design for both logging in and registering with the site. Both pages contain a form to add in the desired username and password. The username and password must be 
-    alphanumerical and be of a length between 5 and 15 characters.
+- A simple card design for both logging in and registering with the site. Both pages contain a form to add in the desired username and password. The username and password must be 
+  alphanumerical and be of a length between 5 and 15 characters.
 
 **Profile Page**
-   - Instead of a flash message, users are welcomed by a message which includes their username over the background of an image 
+- Instead of a flash message, users are welcomed by a message which includes their username over the background of an image 
     of Ireland.
-    - Reviews that the user has already added will appear on this page in the form of cards. These cards will also include the option for users to edit and delete their own reviews. 
-    - As part of defensive programming, the delete button is followed by a modal which asks the user if they are sure that they 
+- Reviews that the user has already added will appear on this page in the form of cards. These cards will also include the option for users to edit and delete their own reviews. 
+- As part of defensive programming, the delete button is followed by a modal which asks the user if they are sure that they 
     want to delete the review.
 
 **Add/Edit Review Page**
-    - Both of these pages have a similar design and allow users to add or edit informaion about their reviews. Each entry into the form uses the 
+- Both of these pages have a similar design and allow users to add or edit informaion about their reviews. Each entry into the form uses the 
     required attribute except for the images URL field. Some have min and max values to ensure that the layout remains consistent. As well as text 
     entries, there is a date selection function to choose the date that the reviewip has been added. Extra JQuery has been added to ensure 
     that the category name is not left blank. This was taken from Code Institute coursework. Should a review be added without an image attached, a default image will be displayed.
 
 **Manage All Pages**
-    - For the Admin user only, there is a Manage All button in the Navbar where the user is able to read, update and delete all reviews 
-    added by any user.
+- For the Admin user only, there is a Manage All button in the Navbar where the user is able to read, update and delete all reviews added by any user. 
+
 
 #### Possible Features Left to Implement
 
 ### 1.4 Structure
-* The Ireland Recommends site is split into seperate pages for each function. For all users, different pages exist for the home, reviews, login and register page. For a logged in user, the Profile and Edit Tip page exists, and for the Manage all page exists for the administrator. Each page has the same footer and the responsive Navbar to ensure a consistent user experience across the site.
+- The Ireland Recommends site is split into seperate pages for each function. For all users, different pages exist for the home, reviews, login and register page. For a logged in user, the Profile and Edit Tip page exists, and for the Manage all page exists for the administrator. Each page has the same footer and the responsive Navbar to ensure a consistent user experience across the site.
 
 ### 1.5 Skeleton
 A mobile first approach was taken to designing the website. The original wireframes were created using Balsamiq and can be found below:
@@ -226,23 +226,28 @@ The following  tools validate every page of the project to ensure it did not con
 - **[Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools)**
     - Google Chrome's DevTools were used to inspect elements of the website and adjust them to ensure that they were effective and responsive at different screen sizes. DevTools was also used to identify errors in my code and to test how changing certain elements would effect the overall look and feel of the website.
 
-### 4.2 Testing User Stories
+### 4.2 Autoprefixer CSS Online
 
-1. 
+This was used to parse CSS and add vendor prefixes in order to ensure that the CSS styling works properly across all 
+browsers. I have added the below header to my CSS styles sheet in order to show this:
+<p> <img src="documentation/screenshots/css-prefixer.jpg">  </p>
+
+### 4.3 Lighthouse
+
+<p >Desktop<img src="documentation/screenshots/lighthouse.jpg">
+Mobile<img src="documentation/screenshots/lighthouse-mobile.jpg"></p>
+
+From Chrome Developer Tools, this Lighthouse score is based on the homepage while being viewed on desktop and mobile. The 
+biggest variant throughout the site is the performance score, which is predominantly due to the image link added by users 
+to the site for each individual Tip, making it quite hard to control. 
+
+### 4.4 Testing User Stories
+
+[Please follow this link to view the full testing document]()
 
 
-2. 
 
-
-3. 
-
-- **[Balsamiq](https://balsamiq.com/)**
-    - I used Balsamiq to design the original wireframes for the project and test how the layout looked. I reverted to Balsamiq when considering changes in the project's design.
-
-- **[GTMetrix](https://gtmetrix.com/)**
-    - GTMetrix was used to test the loading speed of the site and to find out if any elements were creating long loading times.
-
-### 4.3 Device Testing
+### 4.5 Device Testing
 
 I utilised Google Chrome's DevTools to test the responsivness of the website at different screen sizes throughout the project. Once the project was approximately 70% complete, I tested it using a Huawei P9 Lite and an Apple iPhone 11 mobile device and an Acer tablet device. The website worked well on all devices.
 I tested the desktop functionality of the Visit East Cork website on Google Chrome and Microsoft Edge.
@@ -252,15 +257,75 @@ I tested the desktop functionality of the Visit East Cork website on Google Chro
 
 ### Further Testing
 
-[Please follow this link to view the full testing document]()
+- **[Balsamiq](https://balsamiq.com/)**
+    - I used Balsamiq to design the original wireframes for the project and test how the layout looked. I reverted to Balsamiq when considering changes in the project's design.
 
+- **[GTMetrix](https://gtmetrix.com/)**
+    - GTMetrix was used to test the loading speed of the site and to find out if any elements were creating long loading times.
 
-### 4.4 Bugs
+### 4.6 Bugs
 
 
 <span id="deploy"></span>
+
 ## 5. Deployment
 
+### Requirements 
+- Python3 
+- Github account 
+- MongoDB account 
+- Heroku account
+
+### Clone the project 
+To make a local clone and deploy this project in your GitHub Desktop, follow the following steps. 
+1. Log in to GitHub and go to the repository. 
+2. Click on the green button with the text **“Code”.**
+3. Click on **“Open with GitHub Desktop”** and follow the prompts in the GitHub Desktop Application or follow the instructions from **[this link](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop)** to see how to clone the repository in other ways. 
+
+### Working with the local copy
+1. Install all the requirements: Go to the workspace of your local copy. In the terminal window of your IDE type: **pip3 install -r requirements.txt**.
+2. Create a database in MongoDB  
+    - Signup or login to your MongoDB account.
+    - Create a cluster and a database.
+    - Create four collections in the db: **categories, recipes, subscribers, users.**
+    - Add string values for the collections. See <a href="#ux-architecture">my Information architecture</a> how the database is set up for this project.
+3. Create the environment variables 
+    - Create a .gitignore file in the root directory of the project.
+    - Add the env.py file in the .gitignore.
+    - Create the file env.py. This  will contain all the envornment variables.
+    ```
+    Import os
+    os.environ.setdefault("IP", "Added by developer")
+    os.environ.setdefault("PORT", "Added by developer")
+    os.environ.setdefault("SECRET_KEY", "Added by developer")
+    os.environ.setdefault("MONGO_URI", "Added by developer")
+    os.environ.setdefault("MONGO_DBNAME", "Added by developer")
+    ```
+4. Run the app: Open your terminal window in your IDE. Type python3 app.py and run the app.
+
+#### Heroku Deployment  
+1. Set up local workspace for Heroku 
+    - In terminal window of your IDE type: **pip3 freeze -- local > requirements.txt.** (The file is needed for Heroku to know which filed to install.)
+    - In termial window of your IDE type: **python app.py > Procfile** (The file is needed for Heroku to know which file is needed as entry point.)
+2. Set up Heroku: create a Heroku account and create a new app and select your region. 
+3. Deployment method 'Github'
+    - Click on the **Connect to GitHub** section in the deploy tab in Heroku. 
+        - Search your repository to connect with it.
+        - When your repository appears click on **connect** to connect your repository with the Heroku. 
+    - Go to the settings app in Heroku and go to **Config Vars**. Click on **Reveal Config Vars**.
+        - Enter the variables contained in your env.py file. it is about: **IP, PORT, SECRET_KEY, MONGO_URI, MONGO_DBNAME**
+4. Push the requirements.txt and Procfile to repository. 
+     ```
+    $ git add requirements.txt
+    $ git commit -m "Add requirements.txt"
+
+    $ git add Procfile 
+    $ git commit -m "Add Procfile"
+    ```
+5. Automatic deployment: Go to the deploy tab in Heroku and scroll down to **Automatic Deployments**. Click on **Enable Automatic Deploys**. By **Manual Deploy** click on **Deploy Branch**.
+
+Heroku will receive the code from Github and host the app using the required packages. 
+Click on **Open app** in the right corner of your Heroku account. The app wil open and the live link is available from the address bar. 
 
 ***
 <span id="credit"></span>
