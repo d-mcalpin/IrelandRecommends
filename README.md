@@ -36,9 +36,17 @@ Ireland Recommends is a consumer to consumer website that allows users to filter
 The goal of this project is to create an interactive website where users can view reviews, upvote their popularity, add their own reviews and then edit or delete those reviews at any time. An administrator can edit or delete any reviews posted by users on the site. Ireland Recomments uses the Flask framework and is connected to a MongoDB database for the creation, reading, updating and deleting of information present on the site.
 
 ### 1.3 Scope 
-Ireland Recommends's content is located on multiple pages including:
+
 * Base HTML
-    - The base template contains a Navbar that utilises an IF Statment which changes the links displayed depending on whether a user is logged in or out or if they are an administrator. The navbar is fixed to the top of the page when a user scrolls on each page. Using Materialize, the navbar is responsive on small screens and converts to an interactive burger icon. This icon triggers
+    - The base template contains a Navbar that utilises an IF Statment which changes the links displayed depending on whether a user is logged in or out or if they are an administrator. The navbar is fixed to the top of the page when a user scrolls on each page. Using Materialize, the navbar is responsive on small screens and converts to an interactive burger icon. This icon triggers a menu that slides from the right hand side of the screen. It is easy to use and visually appealing.
+    - Flash messages are displayed using Flask's flash feauture. This feature displays messages to the user when they interract with the site.
+    - A footer is also contained in the base template. Social media icons are located in the footer. For the purpose of this project these icons are linked to the each social media sites homepage which opens in a seperate tab.
+
+* Reviews Page
+    - The reviews page is the main landing page of the Ireland Recommends site. It contains the base template content as well as a hero image. 
+    - Filter icons are located below the hero image on the reviews page, these filters allow users to see reviews from the four categories associated with the filters.
+    - In order to improve a the sites usability and user experience, a search bar located below the filters allows users to search for keywords within the reviews and display the related reviews on the page.
+    - 
 
 ### 1.4 Structure
 Based on the Scope Plane, Visit East Cork was developed to provide users with information within moments of arriving at the page. A welcome image entices users to scroll down and the Google Maps API invites them to click on custom markers to discover the local area. A contact form and contact information is within a scroll of the map.
