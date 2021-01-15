@@ -100,20 +100,27 @@ The wireframe mockups gave me a basic idea of how best to lay out each individua
 
 #### Design
 * Colour scheme
-- In keeping with the Irish theme of the site, I decidedto use a green and white colour scheme throughout the site. The type of colour is from the Materialize Light Green Colour Palette which has been lightened to improve visual appearance. Warning flash messages appear in red on the site and welcome and departure messages appear in black. The hover css attribute changes the colour of the category and social media icons when the user hovers over them.
+    - In keeping with the Irish theme of the site, I decidedto use a green and white colour scheme throughout the site. The type of colour is from the Materialize Light Green Colour Palette which has been lightened to improve visual appearance. Warning flash messages appear in red on the site and welcome and departure messages appear in black. The hover css attribute changes the colour of the category and social media icons when the user hovers over them.
 
 * Logo
-- The logo used for the Ireland Recommends website is a Triskell Celtic Symbol, a free to use image from PlumePloume and Pixabay, available **[here](https://pixabay.com/vectors/triskell-symbol-celtic-logo-1194004/)**
+    - The logo used for the Ireland Recommends website is a Triskell Celtic Symbol, a free to use image from PlumePloume and Pixabay, available **[here](https://pixabay.com/vectors/triskell-symbol-celtic-logo-1194004/)**
 
 * Font
-- I selected the Josefin font from Google Fonts for this project as it is reminiscent of classic minimalist travel posters and fits in with the styling of the website. This font is backed up by the sans-serif font.
+    - I selected the Josefin font from Google Fonts for this project as it is reminiscent of classic minimalist travel posters and fits in with the styling of the website. This font is backed up by the sans-serif font.
 
 * Images
-- The hero images and background images were all taken from [Pexels](https://www.pexels.com/). The images for the individual reviews 
+    - The hero images and background images were all taken from [Pexels](https://www.pexels.com/). The images for the individual reviews 
     are added via a URL link by the user. 
 
 #### Defensive Design
-
+- The following defensive programming design elements are in place to prevent a negative user experince:
+    - Usernames and passwords have a minimum and maximum (5,15) number of characters and can only be alphanumeric
+    - Flash messaging is used to prevent users from accessing areas of the site that they do not have authorisation for. The page will then offer to return the user to the homepage.
+        ![Access Denied](/docs/screenshots/accessDenied.jpg)
+    - If no reviews are available to display, again flash messaging will inform the user of this.
+        ![No Reviews Found](/docs/screenshots/noReviewsFound.jpg)
+    - If a user encounters a 403, 404 or 500 error, a custom error page will appear, again offering to return users to the homepage.
+        ![Error 404](/docs/screenshots/404.jpg)
 #### Interactive Design
 ***
 
@@ -168,7 +175,7 @@ I used the following languages for the project:
     - Materialize was used to assist with the responsiveness and styling of the website, such as the navbars for desktop and 
     mobile, buttons, forms, cards and colours.
 - **[Google Fonts](https://fonts.google.com/)**
-    - Google fonts were used to import the 'Sarala' font which is used on all pages throughout the project.
+    - Google fonts were used to import the 'Josefin' font which is used on all pages throughout the project.
 - **[Font Awesome](https://fontawesome.com/)**
     - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes. 
 - **[Balsamiq](https://balsamiq.com/)**
