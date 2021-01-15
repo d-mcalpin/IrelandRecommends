@@ -7,8 +7,6 @@
     <div class="col s12 m6 review-text">
         <h4 class="left-align"><strong>{{ category.review_name }}</strong></h4>
         <p class="left-align">{{ category.review_long }}</p>
-        <div class="left-align upvote"><a href="{{ url_for('upvotes', review_id=category._id) }}"><i
-                    class="far fa-thumbs-up"></i> {{category.upvotes}}</a></div>
         {% if created_by|lower == "admin"|lower %}
         <p class="left-align"><em>Edited by {{category.created_by}} on {{category.review_date}}</em></p>
         {% else %}
