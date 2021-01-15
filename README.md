@@ -232,25 +232,21 @@ This was used to parse CSS and add vendor prefixes in order to ensure that the C
 browsers. I have added the below header to my CSS styles sheet in order to show this:
 <p> <img src="documentation/screenshots/css-prefixer.jpg">  </p>
 
-### 4.3 Lighthouse
-
-<p >Desktop<img src="documentation/screenshots/lighthouse.jpg">
-Mobile<img src="documentation/screenshots/lighthouse-mobile.jpg"></p>
-
-From Chrome Developer Tools, this Lighthouse score is based on the homepage while being viewed on desktop and mobile. The 
-biggest variant throughout the site is the performance score, which is predominantly due to the image link added by users 
-to the site for each individual Tip, making it quite hard to control. 
-
 ### 4.4 Testing User Stories
 
 [Please follow this link to view the full testing document]()
 
 
-
 ### 4.5 Device Testing
 
-I utilised Google Chrome's DevTools to test the responsivness of the website at different screen sizes throughout the project. Once the project was approximately 70% complete, I tested it using a Huawei P9 Lite and an Apple iPhone 11 mobile device and an Acer tablet device. The website worked well on all devices.
-I tested the desktop functionality of the Visit East Cork website on Google Chrome and Microsoft Edge.
+#### Lighthouse
+
+<p >Desktop<img src="docs/screenshots/lighthouse-desktop.jpg">
+Mobile<img src="docs/screenshots/lighthouse-mobile.jpg"></p>
+
+From Chrome Developer Tools, this Lighthouse score is based on the performance of the Ireland Recommends homepage while being viewed on desktop and mobile. The 
+performace score varied significantly while testing, mianly due to the image link added by users 
+to the site for each individual review.
 
 #### On screen sizes of tablet size and below: 
 - Cards and divs are responsive and will align with the mobile view. 
@@ -261,7 +257,8 @@ I tested the desktop functionality of the Visit East Cork website on Google Chro
     - I used Balsamiq to design the original wireframes for the project and test how the layout looked. I reverted to Balsamiq when considering changes in the project's design.
 
 - **[GTMetrix](https://gtmetrix.com/)**
-    - GTMetrix was used to test the loading speed of the site and to find out if any elements were creating long loading times.
+    - GTMetrix was used to test the loading speed of the site and to find out if any elements were creating long loading times. Ireland Recommends received an A grande for performance and structure.
+    - <p ><img src="docs/screenshots/GTMetrix.jpg">
 
 ### 4.6 Bugs
 
@@ -270,62 +267,6 @@ I tested the desktop functionality of the Visit East Cork website on Google Chro
 
 ## 5. Deployment
 
-### Requirements 
-- Python3 
-- Github account 
-- MongoDB account 
-- Heroku account
-
-### Clone the project 
-To make a local clone and deploy this project in your GitHub Desktop, follow the following steps. 
-1. Log in to GitHub and go to the repository. 
-2. Click on the green button with the text **“Code”.**
-3. Click on **“Open with GitHub Desktop”** and follow the prompts in the GitHub Desktop Application or follow the instructions from **[this link](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop)** to see how to clone the repository in other ways. 
-
-### Working with the local copy
-1. Install all the requirements: Go to the workspace of your local copy. In the terminal window of your IDE type: **pip3 install -r requirements.txt**.
-2. Create a database in MongoDB  
-    - Signup or login to your MongoDB account.
-    - Create a cluster and a database.
-    - Create four collections in the db: **categories, recipes, subscribers, users.**
-    - Add string values for the collections. See <a href="#ux-architecture">my Information architecture</a> how the database is set up for this project.
-3. Create the environment variables 
-    - Create a .gitignore file in the root directory of the project.
-    - Add the env.py file in the .gitignore.
-    - Create the file env.py. This  will contain all the envornment variables.
-    ```
-    Import os
-    os.environ.setdefault("IP", "Added by developer")
-    os.environ.setdefault("PORT", "Added by developer")
-    os.environ.setdefault("SECRET_KEY", "Added by developer")
-    os.environ.setdefault("MONGO_URI", "Added by developer")
-    os.environ.setdefault("MONGO_DBNAME", "Added by developer")
-    ```
-4. Run the app: Open your terminal window in your IDE. Type python3 app.py and run the app.
-
-#### Heroku Deployment  
-1. Set up local workspace for Heroku 
-    - In terminal window of your IDE type: **pip3 freeze -- local > requirements.txt.** (The file is needed for Heroku to know which filed to install.)
-    - In termial window of your IDE type: **python app.py > Procfile** (The file is needed for Heroku to know which file is needed as entry point.)
-2. Set up Heroku: create a Heroku account and create a new app and select your region. 
-3. Deployment method 'Github'
-    - Click on the **Connect to GitHub** section in the deploy tab in Heroku. 
-        - Search your repository to connect with it.
-        - When your repository appears click on **connect** to connect your repository with the Heroku. 
-    - Go to the settings app in Heroku and go to **Config Vars**. Click on **Reveal Config Vars**.
-        - Enter the variables contained in your env.py file. it is about: **IP, PORT, SECRET_KEY, MONGO_URI, MONGO_DBNAME**
-4. Push the requirements.txt and Procfile to repository. 
-     ```
-    $ git add requirements.txt
-    $ git commit -m "Add requirements.txt"
-
-    $ git add Procfile 
-    $ git commit -m "Add Procfile"
-    ```
-5. Automatic deployment: Go to the deploy tab in Heroku and scroll down to **Automatic Deployments**. Click on **Enable Automatic Deploys**. By **Manual Deploy** click on **Deploy Branch**.
-
-Heroku will receive the code from Github and host the app using the required packages. 
-Click on **Open app** in the right corner of your Heroku account. The app wil open and the live link is available from the address bar. 
 
 ***
 <span id="credit"></span>
