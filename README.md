@@ -13,7 +13,7 @@ You can view the live website here: [Ireland Recommends](https://ireland-recomme
 ## Contents
 
 - <a href="#ux">1. User Experience </a>
-- <a href="#features">2. Features </a>
+- <a href="#data">2. Data Architecture </a>
 - <a href="#tech">3. Technologies Used </a>
 - <a href="#test">4. Testing </a>
 - <a href="#deploy">5. Deployment </a>
@@ -43,67 +43,67 @@ The goal of this project is to create an interactive website where users can vie
     - A footer is also contained in the base template. Social media icons are located in the footer. For the purpose of this project these icons are linked to the each social media sites homepage which opens in a seperate tab.
 
 * Reviews Page
-    - The reviews page is the main landing page of the Ireland Recommends site. It contains the base template content as well as a hero image. 
+    - The reviews page is the main landing page of the Ireland Recommends site. It contains the base template content as well as a hero image and the following elements. 
     - Filter icons are located below the hero image on the reviews page, these filters allow users to see reviews from the four categories associated with the filters.
     - In order to improve a the sites usability and user experience, a search bar located below the filters allows users to search for keywords within the reviews and display the related reviews on the page.
-    - 
+    - Each review is displayed on a card that is generated using a Jinja for loop. The card is tyled using Materialize and contains an image relating to the review, a short description of the review, the review date and a "Like" upvote button. Using a Python sort function, cards are displayed with the newest review first.
+
+* Individual Review Page    
+    - Each review card is linked to an indiviudal review page. This page contains a simple layout featuring a large image associated with the review, the review name, its long description and the details of the user that added or edited the review. When a user is logged in to the site, they have the ability to edit or their delete the review if they are the user who originally posted it. In addition, there is a 'return to home' button which acts as an additional navigation option for ease of use. 
+
+* Login / Register Page
+    - A simple card design for both logging in and registering with the site. Both pages contain a form to add in the desired username and password. The username and password must be 
+    alphanumerical and be of a length between 5 and 15 characters.
+
+* Profile Page
+   - Instead of a flash message, users are welcomed by a message which includes their username over the background of an image 
+    of Ireland.
+    - Reviews that the user has already added will appear on this page in the form of cards. These cards will also include the option for users to edit and delete their own reviews. 
+    - As part of defensive programming, the delete button is followed by a modal which asks the user if they are sure that they 
+    want to delete the review.
+
+* Add/Edit Review Page
+    - Both of these pages have a similar design and allow users to add or edit informaion about theire reviews. Each entry into the form uses the 
+    required attribute except for the images URL field. Some have min and max values to ensure that the layout remains consistent. As well as text 
+    entries, there is a date selection function to choose the date that the reviewip has been added. Extra JQuery has been added to ensure 
+    that the category name is not left blank. This was taken from Code Institute coursework. Should a review be added without an image attached, a default image will be displayed.
+
+* Manage All Page
+    - For the Admin user only, there is a Manage All button in the Navbar where the user is able to read, update and delete all reviews 
+    added by any user.
 
 ### 1.4 Structure
-Based on the Scope Plane, Visit East Cork was developed to provide users with information within moments of arriving at the page. A welcome image entices users to scroll down and the Google Maps API invites them to click on custom markers to discover the local area. A contact form and contact information is within a scroll of the map.
+* The Ireland Recommends site is split into seperate pages for each function. For all users, different pages exist for the home, reviews, login and register page. For a logged in user, the Profile and Edit Tip page exists, and for the Manage all page exists for the administrator. Each page has the same footer and the responsive Navbar to ensure a consistent user experience across the site.
 
 ### 1.5 Skeleton
 A mobile first approach was taken to designing the website. The original wireframes were created using Balsamiq and can be found below:
 
-- Mobile Wireframe PDF - <a href="https://drive.google.com/file/d/1TqIiR8u5vYMyz_Q2usJRWyE0L0NCeRrr/view?usp=sharing" rel="noopener" target="_blank">mobile version in PNG</a>.
-- Desktop Wireframe PDF - <a href="https://drive.google.com/file/d/1rjnoTlbCzB_b-Os8TaWMGbwpYFu89ySf/view?usp=sharing" rel="noopener" target="_blank">desktop version in PNG</a>.
+- Mobile Wireframe PDF - <a href="https://drive.google.com/file/d/1mZFBJaE9AHte7Ps6IZO7y6owGuUefVHX/view?usp=sharing" rel="noopener" target="_blank">mobile version in PNG</a>.
+- Desktop Wireframe PDF - <a href="https://drive.google.com/file/d/1pcw1GKw0YcSmr4G45tPgPNvmSDhIfQSt/view?usp=sharing" rel="noopener" target="_blank">desktop version in PNG</a>.
 
 The wireframe mockups gave me a basic idea of how best to lay out each individual element that I wanted to incorporate into the project and how that would impact and enhance the user experience. As the project progressed, how best to place each of these elements became apparent.
 
 ### 1.6 Surface
-A blue and white colour scheme was initially decided upon to give a clean and crisp image to the site, I decided to add a teal colour, particularly for buttons and hover elemenets. I chose the Josefin font from Google Fonts as I found that it reminded me of the text on classic travel posters.  Shadows and rounded borders appear on a number of elements on the site to add depth and to keep it interesting.
+* Colour scheme
+- In keeping with the Irish theme of the site, I decidedto use a green and white colour scheme throughout the site. The type of colour is from the Materialize Light Green Colour Palette which has been lightened to improve visual appearance. Warning flash messages appear in red on the site and welcome and departure messages appear in black. The hover css attribute changes the colour of the category and social media icons when the user hovers over them.
 
-***Logo*** 
-The logo used for the Visit East Cork website is a Triskell Celtic Symbol, a free to use image from PlumePloume and Pixabay, available **[here](https://pixabay.com/vectors/triskell-symbol-celtic-logo-1194004/)**
+* Logo
+- The logo used for the Ireland Recommends website is a Triskell Celtic Symbol, a free to use image from PlumePloume and Pixabay, available **[here](https://pixabay.com/vectors/triskell-symbol-celtic-logo-1194004/)**
 
-***Font*** 
-I selected the Josefin font from Google Fonts for this project as it is reminiscent of classic minimalist travel posters and fits in with the styling of the website. This font is backed up by the sans-serif font.
+* Font
+- I selected the Josefin font from Google Fonts for this project as it is reminiscent of classic minimalist travel posters and fits in with the styling of the website. This font is backed up by the sans-serif font.
 
-***Colours:***
-The colour scheme for this project is bright and airy so a blue and white theme was selected. The following colours are used in the project:
-
-* Light Blue: rgba(87, 202, 255, 1)
-* Hover Teal for contrast: rgba(0, 136, 122, 1)
-
+* Images
+- The hero images and background images were all taken from [Pexels](https://www.pexels.com/). The images for the individual reviews 
+    are added via a URL link by the user. 
 ***
 
-<span id="features"></span>
+<span id="data"></span>
 
-## 2. Features 
+## 2. Data Architecture 
 
 ### 2.1 Header
-Following the advice of my mentor, it was decided that the header would simply contain the website name and logo centred. As this is a short single page website, a navbar is not neccessary.
 
-### 2.2 Welcome Image
-Users are welcomed to the page with a large hero or welcome image and a Jumbrotron containing a welcome message. The image zooms slowly towards to user when the page loads.
-There are three welcome images rotating on a Bootstrap Carousel. Text below the main image gives users instructions on how to use the site.
-
-### 2.3 Information Cards with Toggle and Map Zoom Features
-The information cards below the site instructions utilise JQuery Toggle to provide users with information on areas of East Cork. When the user clicks on the "Show More" button on each card, more informaiton will appear about that location and the map will centre on that location also.
-
-### 2.4 Google Maps API
-The Google Maps section of the website contains a large map with preloaded, customised markers that show a particular point of interst on the map. When w user clicks on the custom icon, an information window will be displayed showcasing an image of the point of interest and its name.
-
-### 2.5 Google Places Autocomplete Search
-A custom search bar is embedded in the top left corner of the map. This search bar allows users to search the area of the map for other points of interest that are not highlighted by custom markers. This search will show local businesses including shops, bars, restaurants, hotels and other businesses within the boandaries of the map.
-
-### 2.6 Contact Form
-Below the map, a contact form invites users to send a message to the site owner if the require further information. This is a functional and opeerational contact form powered by EmailJS. When users submit their query after filling out the required boxed, a message will display in the browser window telling them if their message was sent successfully or if it failed.
-
-### 2.7 Footer
-The footer of the Visit East Cork webpage contains contact informaion and social media links that invite users to keep in contact with the site owner. A weather forecast and current temperature display for the Cork area is also contained within the footer. This is a custom forecast provided by the Openweathermap API.
-
-### 2.8 Features Left to Implement
-After reading the Google Maps Javascript API, there is an incredible amount of functionality that can be added to custom maps. In order to monetise the website richer and more detailed information on local businesses could be added to the map, this would provide the website owner with more opportunities to showcase local businesses on the Visit East Cork website.
 ***
 <span id="tech"></span>
 
@@ -121,48 +121,45 @@ I used the following languages for the project:
 - **[Javascript](https://en.wikipedia.org/wiki/JavaScript)** 
   - The project used **Javacsript** to provide the functionality and customisation for the contact forn, card toggle, Google Maps API and the Openweathermap forecast.
 
-### 3.2 Frameworks 
-- **[BootStrap 4](https://getbootstrap.com/)**
-  - I used the **Bootstrap 4** Framework to design the website and add useful components and utilities including:
-    - [Flexbox](https://getbootstrap.com/docs/4.5/utilities/flex/)
-    - [Jumbotron](https://getbootstrap.com/docs/4.5/components/jumbotron/)
-    - [Cards](https://getbootstrap.com/docs/4.5/components/card/)
-    - [Images](https://getbootstrap.com/docs/4.5/content/images/)
-
-### 3.3 Libraries
-
-- **[JQuery](https://jquery.com)**
-    - The project uses **JQuery** to add toggle functionality to the East Cork Area information cards.
-
-- **[Fontawesome](https://fontawesome.com/)**
-    - The project uses **Fontawesome** to add attractive icons to each of thearea information cards and the social media links.
-
+### 3.2 Frameworks, Libraries and Programs
+- **[MongoDB](https://www.mongodb.com/1)**
+    - MongoDB was used to host the data used on the site and was chosen due to the non-relational nature of the data.
+- **[Flask](https://flask.palletsprojects.com/en/1.1.x/)**
+    - The Flask framework was used to import the Flask, flash, render_template, redirect, request, session, and url_for 
+    functions that are used throughout the site.
+- **[BSon](http://bsonspec.org/)**
+    - This was imported in order to access the data used across the site.
+- **[Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/)**
+    - This was imported to include the password control and to enhance security on the site.
+- **[Jinja Templating](https://jinja.palletsprojects.com/en/2.11.x/templates/)**
+    - This was used predominantly for the with, for loops and if statements in order to display all of the relevant data.
+- **[JQuery](https://jquery.com/)**
+    - I have used JQuery predominantly to initialise the components used in the Materialize framework. In addition, I used 
+    code taken from the Data Centric Development Module with the Code Institute in order to ensure that the category names are 
+    a required attribute.
+- **[Materialize 1.0.0](https://materializecss.com/)**
+    - Materialize was used to assist with the responsiveness and styling of the website, such as the navbars for desktop and 
+    mobile, buttons, forms, cards and colours.
 - **[Google Fonts](https://fonts.google.com/)**
-    - The Quicksand Font from Google Fonts is used throughout the project in different weights and colours.
+    - Google fonts were used to import the 'Sarala' font which is used on all pages throughout the project.
+- **[Font Awesome](https://fontawesome.com/)**
+    - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes. 
+- **[Balsamic](https://balsamiq.com/)**
+    - Balsamiq was used to create the wireframes during the design process.
 
-- **[Google Places Library](https://developers.google.com/maps/documentation/javascript/places)**
-    - The Google Places Library allows users to seacrh for places using the search function on the map and can return information on those places including addresses, images, user reviews and opening hours.
 
-### 3.4 APIs
-
-- **[Google Maps Javascript API](https://developers.google.com/maps/documentation/javascript/overview)**
-    - The project uses **Google Maps Javascript** to generate the primary website attraction, the local area map. In order to use this API on a website, a developed must create a billing account and generate an API key. This key and account allows the owner to access the maps database. In order to access places through the Autocomplete Search, the developer must also link the Google Place Library to their API key and billing account. This can be challenging as it is advised that developers restrict their keys do that they are not abused by a third party. This can sometimes cause the Gogole Maps API to fail if Google does not recognise the website that is trying to load the map. 
-
-- **[EmailJS API](https://www.emailjs.com/)**
-    - The project uses **EmailJS** to add functionality to the website contact form. This API was utilised in a Code Institute Project and it allows the developer to link the contact form to their email address and inturn provides a method of communication for the website users. EmailJS requires developers to set up an account and link it to their email address.
-
-- **[Open Weather Map API](https://openweathermap.org/api)**
-    - The project uses **Open Weather Map API** to add weather forecast functionality to the footer of the Visit East Cork website. Like the Google Maps API, this API requires developers to set up an account and use an API Key to access weather information specific to their area. This is a straightforward process.
-
-### 3.4 IDE
+### 3.3 IDE
 
 - **[GitPod](https://www.gitpod.io/)**
     - Gitpod was used to develop the website and style each element before deployment.
 
-### 3.5 External Hosting
+### 3.4 External Hosting
 
 - **[GitHub](https://github.com/)**
     - This project uses the GitHub hosting service and is saved in a GitHub repository.
+
+- **[Heroku](https://dashboard.heroku.com/apps)**
+    - Heroku is used for the hosting of the site and is deployed through here.
 
 - **[Google Drive](ttps://drive.google.com/)**
     - The Testing Document and Wireframe PNG files are saved to a Google Drive account and are openly accessible.
