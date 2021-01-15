@@ -64,7 +64,7 @@
             {% endif %}
         </ul>
     </header>
-    <section>
+    <div>
         <!-- flash messages section -->
         {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -75,7 +75,7 @@
         {% endfor %}
         {% endif %}
         {% endwith %}
-    </section>
+    </div>
     <main>
         {% block content%}
         {% endblock %}
