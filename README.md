@@ -85,6 +85,10 @@ Ireland Recommends is a consumer to consumer website that allows users to filter
 
 #### Possible Features Left to Implement
 
+- **Upvote Button** - At the moment, the upvote "Like" feature on the review cards will increment the number of upvotes by 1 every time a user clicks on the like button. In the future I would like to make this a click on / click off button. This would require the user id to be stored in the database if the button is clicked and removed if it is clicked again.
+- **Commercialise Site** - In the future I would like to add the ability for businesses related to the review categories to advertise on the site and potentially generate revenue for the site owner.
+- **Pagination** - Pagination could be added to the Reviews page as many users could add a large number of reviews to the site.
+
 ### 1.4 Structure
 - The Ireland Recommends site is split into seperate pages for each function. For all users, different pages exist for the home, reviews, login and register page. For a logged in user, the Profile and Edit Review page exists, and the Manage All page exists for the administrator. Each page has the same footer and the responsive Navbar to ensure a consistent user experience across the site.
 
@@ -114,6 +118,8 @@ The wireframe mockups gave me a basic idea of how best to lay out each individua
 
 #### Defensive Design
 - The following defensive programming design elements are in place to prevent a negative user experince:
+    - In order to ensure that users and administrators do not accidentally delete a review permanently, a pop up modal requires the user to confirm their decision.
+        ![Modal](/docs/screenshots/modal.jpg)
     - Usernames and passwords have a minimum and maximum (5,15) number of characters and can only be alphanumeric
     - Flash messaging is used to prevent users from accessing areas of the site that they do not have authorisation for. The page will then offer to return the user to the homepage.
         ![Access Denied](/docs/screenshots/accessDenied.jpg)
@@ -121,7 +127,7 @@ The wireframe mockups gave me a basic idea of how best to lay out each individua
         ![No Reviews Found](/docs/screenshots/noReviewsFound.jpg)
     - If a user encounters a 403, 404 or 500 error, a custom error page will appear, again offering to return users to the homepage.
         ![Error 404](/docs/screenshots/404.jpg)
-#### Interactive Design
+
 ***
 
 <span id="data"></span>
@@ -265,7 +271,7 @@ to the site for each individual review.
 
 - **[GTMetrix](https://gtmetrix.com/)**
     - GTMetrix was used to test the loading speed of the site and to find out if any elements were creating long loading times. Ireland Recommends received an A grande for performance and structure.
-    - <p ><img src="docs/screenshots/GTMetrix.jpg">
+    <img src="docs/screenshots/GTMetrix.jpg">
 
 ### 4.6 Bugs
 I encountered the following bugs while developing the Ireland Recommends website:
@@ -340,7 +346,8 @@ Click on **Open app** in the right corner of your Heroku account. The app wil op
 
 ### 6.1 Content
 The design and style of my project was initially inspired by elements of the following project:
-- [adamdelancey's Milestone 3 Project, Tips ](https://github.com/adamdelancey/ms3-tips)
+- [adamdelancey's Milestone 3 Project, Tips](https://github.com/adamdelancey/ms3-tips)
+
 Some README content and layout was also inspired by the following project:
 - [juanstelling's Milestone 3 Project, Breaktasty](https://github.com/juanstelling/MS3_breaktasty/blob/master/README.md)
 
