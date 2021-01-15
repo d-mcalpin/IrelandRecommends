@@ -168,7 +168,7 @@ I used the following languages for the project:
 
 ## 4. Testing
 
-[Please follow this link to view the full testing document](https://drive.google.com/file/d/1WEF8KH6VIpwU_CcmEMLlib4j6u0sbjgr/view?usp=sharing)
+[Please follow this link to view the full testing document]()
 
 - **[Balsamiq](https://balsamiq.com/)**
     - I used Balsamiq to design the original wireframes for the project and test how the layout looked. I reverted to Balsamiq when considering changes in the project's design.
@@ -190,25 +190,13 @@ I used the following languages for the project:
 
 ### 4.2 Testing User Stories
 
-1. As a visitor to East Cork seeking information on the area:
-     - I am given an introduction to the website and how to use it.
-     - I can access information on local areas by clicking the "Show More" button on the Area cards.
-     - The "Show More" button also directs me to the relevant area on the map where I can see local amenities.
-     - I can search for other establishments locally using the search bar.
-     - Should I require assistance or further information, I can contact the site owner via the funcitoning contact form.
+1. 
 
 
-2. As a resident of East Cork:
-    - I can find out information about my locality including amenities near me.
-    - I can search for local businesses on the map and then contact those businesses.
-    - I can contact the website owner through the functioning contact form should I require further information the local area.
-    - I can check the upcoming weather forecast for the local area.
+2. 
 
 
-3. As a local business owner:
-    - I can see that the website owner can showcase local businesses through custom map markers.
-    - I can find out which local businesses are promoting their offering on the website.
-    - I can contact the website owner via the functioning contact form to enquire about showcasing my business.
+3. 
 
 
 ### 4.3 Device Testing
@@ -221,94 +209,41 @@ I tested the desktop functionality of the Visit East Cork website on Google Chro
 
 ### Further Testing
 
-[Please follow this link to view the full testing document](https://drive.google.com/file/d/1WEF8KH6VIpwU_CcmEMLlib4j6u0sbjgr/view?usp=sharing)
+[Please follow this link to view the full testing document]()
 
 **W3C HTML Validator**
-* Ran index.html through validator to check there were no syntax errors: 
-    * Failed – 2 images are missing SRC attributes however these attributes are filled by the Google Place API at line 165 and by the Open Weather Map API at line 225.
-    * Failed – W3C Validator does not recognise a phone number as an anchor tag however this is recognised by browsers.
+
 
 **W3C CSS Validator**
-W3C CSS Validator
-* Ran style.css through validator to check there were no syntax errors: 
-    * Passed with no errors
+
 
 ### 4.4 Bugs
 
-I encountered the following bugs while developing the Visit East Cork website:
-
-### Google Maps API
-- In order to safeguard your API Key, Google advised that you register your websites that will be using your key on the Google API credentials page. I registered my GitPod demo site and the Maps API worked fine but when I restarted GitPod and opened a new demo page, the Maps API stopped working. I later realised that I needed to re-regsiter my site with  Google MAps API credential and it worked fine after this.
-
-### Google Autocomplete Places
-- Although the Autcomplete has set boundaries within the area of East Cork, occasionally search results appear from outside the area. This requires further investigation.
 
 <span id="deploy"></span>
 ## 5. Deployment
 
-The Visit East Cork website is hosted on GitHub Pages and was developed using the GitPod IDE using the following steps:
 
-1. An initial repository was created in my GitHub account for the Visit East Cork Project.
-2. Using the GitPod Chrome extension, the project was launched from the GitHub repository.
-3. All development on the project was carried out on the GitPod IDE.
-4. Changes to the project were committed and pushed regularly from GitPod to the Github repository.
-5. The Master Branch was the sole branch used to edit the project and the GitHub pages website was created from this branch. A link to the site is available **[here](https://d-mcalpin.github.io/visit-east-cork/)**.
-6. To create a local copy of this repository, click "clone or download" on the Visit East Cork respository page and copy the provided URL. Open the Command Line Interface in your editor and type **git clone** and paste the URL copied earlier. Pressing enter creates a local clone of the Visit East Cork repository.
 ***
 <span id="credit"></span>
 ## 6. Credits
 
 ### 6.1 Content
-The design and style of my project was initially inspired by elements of the following Milestone 2 projects:
-- [michellelclement's Mykonos Recommended ](https://github.com/michellelclement/mykonos-recommended-MS2)
-- [samc85's Milestone2-project](https://github.com/samc85/Milestone2-project)
 
-The following sources were used for code snippets or inspiration throughout the project:
-- **Main Image**
-    - The hero image and jumbotron were inspired by the Love Running project of the Code Institute Full Stack Web Developer Course.
-
-    - **Carousel**
-    - The homepage carousel for the main hero image section was designed using [Bootstrap 4's documentation](https://getbootstrap.com/docs/4.0/components/carousel/).
-    
-- **Area Infrmation Cards**
-    - The cards were developed from Bootstrap 4's card documentation.
-    - Box shadow effects were inspired by the following from [W3Schools](https://www.w3schools.com/cssref/css3_pr_box-shadow.asp).
-    - The toggle feature on the Area Informaion cards was inspired by the followng from [JQuery](https://api.jquery.com/toggle/).
-    - Box shadow effects were inspired by the following from [W3Schools](https://www.w3schools.com/cssref/css3_pr_box-shadow.asp).
-
-- **Google Maps API**
-    - The Google Maps API documentation, available [here](https://developers.google.com/maps/documentation/javascript/overview) was used to develop the map feature of the Visit East Cork website. Additionally the following resources were used to style and add functionality to the map:
-        - Embedding the search bar within the map was inspired by the followinf from [Stack Overflow](https://stackoverflow.com/questions/58870022/google-maps-how-do-you-embed-it-with-search-bar) along with the following from [Google Developers](https://developers.google.com/maps/documentation/javascript/places-autocomplete).
-        - Custom markers were deveoped using he followig video tutorials on Youtube:[Google Maps Tutorial](https://www.youtube.com/watch?v=Zxf1mnP5zcw) and [Google Maps Places Tutorial](https://www.youtube.com/watch?v=oVr6unKZbg4). The map icons were generated using the custom marker maker on [Mapsmaker.com](https://mapicons.mapsmarker.com/)
-        - Info Windows were designed from the video tutorials linked above as well as Google's documentation on [InfoWindows](https://developers.google.com/maps/documentation/javascript/infowindows) and the following from [Stackoverflow](https://stackoverflow.com/questions/43544741/google-map-close-info-window-when-another-marker-is-clicked)
-        - The map reset button took information from the following thread on [Stackoverflow](https://stackoverflow.com/questions/42151253/reinitialize-restart-google-map-api).
-        - The search boundaries on the map search were installed with assistance from the following thread on [Stackoverflow](https://stackoverflow.com/questions/46136800/how-to-set-bounds-for-google-places-autocomplete-using-drop-down) as well as the [Google Maps Documentation](https://developers.google.com/maps/documentation/javascript/examples/control-bounds-restriction).
-
-- **EmailJS API and Contact Form**
-    - The EmailJS documention, available [here]() provided all information for activating the API. Styling for the contact form was developed using content from the Code Institute Full Stack Web Developer course.
-
-- **Open Weather Map API**
-    - Information on how to set up and install the Open Weather Map API wsa taken from the [official documentaion](https://openweathermap.org/guide) and the following from [Stackoverflow](https://stackoverflow.com/questions/36174177/show-local-weather-using-openweathermap-api)
-
-    - The hyperlink code for phone numbers was discovered at [Stackoverflow Overlays](https://stackoverflow.com/questions/53270766/how-do-i-hyperlink-a-phone-number).
 
 ### 6.2 Media
 
 - **Images**
-    - The Visit East Cork Icon and Logo was sourced from PlumePloume on Pixabay, available [here](https://pixabay.com/vectors/triskell-symbol-celtic-logo-1194004/).
-    - All images for local attractions were sourced from each individual establishment's public Facebook page with the exception of The Ballycotton Cliff Walk which was sourced from Tripadvisor and Garryvoe Beach which was sourced from Twitter.
-
+    
 - **Text**
-    - All the text for the website was written by myself.
+    
 
 - **Mockups**
-    - [Techsini](Techsini.com) was used to generate the desktop and mobile mockups.
+    
 
 ### 6.3 Acknowledgements
 
-- **Oluwafemi Medale** (My Mentor) - Thank you for your assistance with this project.
-- **The Code Institute Slack Community** - The community was a great source of inspiration and assistance throughout the project.
-- **Lucy, Neil and Ulysses from Student Support** for their assistance throughout this project.
+
 
 ***
 
