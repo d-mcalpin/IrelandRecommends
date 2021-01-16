@@ -168,7 +168,7 @@ def edit_review(review_id):
             "review_short": request.form.get("review_short"),
             "review_long": request.form.get("review_long"),
             "review_img": request.form.get("review_img"),
-            "review_date": request.form.get("review_date"),
+            "review_date": date.today().strftime("%d/%m/%Y"),
             "created_by": session["user"],
         }
         mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)

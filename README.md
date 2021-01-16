@@ -57,7 +57,7 @@ Ireland Recommends is a consumer to consumer website that allows users to filter
 - The reviews page is the main landing page of the Ireland Recommends site. It contains the base template content as well as a hero image and the following elements. 
 - Filter icons are located below the hero image on the reviews page, these filters allow users to see reviews from the four categories associated with the filters.
 - In order to improve a the sites usability and user experience, a search bar located below the filters allows users to search for keywords within the reviews and display the related reviews on the page.
-- Each review is displayed on a card that is generated using a Jinja for loop. The card is tyled using Materialize and contains an image relating to the review, a short description of the review, the review date and a "Like" upvote button. Using a Python sort function, cards are displayed with the newest review first.
+- Each review is displayed on a card that is generated using a Jinja for loop. The card is tyled using Materialize and contains an image relating to the review, a short description of the review, the review date, a chit containing the review category and a "Like" upvote button. Using a Python sort function, cards are displayed with the newest review first.
 
 **Individual Review Page**    
  - Each review card is linked to an indiviudal review page. This page contains a simple layout featuring a large image associated with the review, the review name, its long description and the details of the user that added or edited the review. When a user is logged in to the site, they have the ability to edit or their delete the review if they are the user who originally posted it. In addition, there is a 'return to home' button which acts as an additional navigation option for ease of use. 
@@ -175,7 +175,7 @@ I used the following languages for the project:
     - This was used predominantly for the for loops and if statements in order to display all of the relevant data.
 - **[JQuery](https://jquery.com/)**
     - I have used JQuery predominantly to initialise the components used in the Materialize framework. In addition, I used 
-    code taken from the Data Centric Development Module with the Code Institute in order to ensure that the category names are 
+    code taken from the Code Institute's Data Centric Development Module to ensure that the category names in the add and edit review forms are 
     a required attribute.
 - **[Materialize 1.0.0](https://materializecss.com/)**
     - Materialize was used to assist with the responsiveness and styling of the website, such as the navbars for desktop and 
@@ -242,8 +242,7 @@ The following  tools validate every page of the project to ensure it did not con
 ### 4.2 Autoprefixer CSS Online
 
 This was used to parse CSS and add vendor prefixes in order to ensure that the CSS styling works properly across all 
-browsers. I have added the below header to my CSS styles sheet in order to show this:
-<p> <img src="/documents/screenshots/css-prefixer.jpg">  </p>
+browsers. I have added the below header to my CSS styles sheet in order to show this.
 
 ### 4.4 Testing User Stories
 
