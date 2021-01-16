@@ -210,8 +210,6 @@ I used the following languages for the project:
 
 ### 4.1 Validation 
 
-[Please follow this link to view the full testing document]()
-
 The following  tools validate every page of the project to ensure it did not contain syntax errors.
 
 - **[W3C HTML Validator](https://validator.w3.org/)**
@@ -242,11 +240,11 @@ The following  tools validate every page of the project to ensure it did not con
 ### 4.2 Autoprefixer CSS Online
 
 This was used to parse CSS and add vendor prefixes in order to ensure that the CSS styling works properly across all 
-browsers. I have added the below header to my CSS styles sheet in order to show this.
+browsers. A header has been added to the CSS styles sheet in order to show this.
 
 ### 4.4 Testing User Stories
 
-[Please follow this link to view the full testing document]()
+[Please follow this link to view the User Stories Testing Document](https://docs.google.com/document/d/1C4we-J3CnRsjOnqQRHJ_wN1EBiYHoKYECA29C5jfJAM/edit?usp=sharing)
 
 
 ### 4.5 Device Testing
@@ -379,8 +377,8 @@ The following sources were used for code snippets or inspiration throughout the 
 ### 6.3 Acknowledgements
 - **Oluwafemi Medale** (My Mentor) - Thank you for your assistance with this project.
 - **The Code Institute Slack Community** - The community was a great source of inspiration and assistance throughout the project.
-- **My family** for their assistance testing the website and adding reviews.
-
+- **My Family** for their assistance testing the website and adding reviews.
+- **Code Institute's Student Support** for their assistance throughout this project.
 
 ***
 
