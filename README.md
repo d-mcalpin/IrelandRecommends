@@ -113,7 +113,7 @@ The wireframe mockups gave me a basic idea of how best to lay out each individua
     - I selected the Josefin font from Google Fonts for this project as it is reminiscent of classic minimalist travel posters and fits in with the styling of the website. This font is backed up by the sans-serif font.
 
 * Images
-    - The hero images and background images were all taken from [Pexels](https://www.pexels.com/). The images for the individual reviews 
+    - The hero images and background images were all taken from [Pixabay](https://www.pixabay.com/). The images for the individual reviews 
     are added via a URL link by the user. 
 
 #### Defensive Design
@@ -271,9 +271,8 @@ to the site for each individual review.
     <img src="documents/screenshots/gtmetrix.jpg">
 
 ### 4.6 Bugs
-I encountered the following bugs while developing the Ireland Recommends website:
+I encountered the following bug while developing the Ireland Recommends website:
 - When users were submitting a review, they could select any date using a date picker from Materialize. In order to acurately record the date, my mentor recommended that this should be automated using Python. It took some time to find the correct format but I eventually got the code to record dates accurately.
-- 
 
 <span id="deploy"></span>
 
