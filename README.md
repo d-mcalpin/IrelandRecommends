@@ -377,5 +377,10 @@ The following sources were used for code snippets or inspiration throughout the 
 - **My Family** for their assistance testing the website and adding reviews.
 - **Code Institute's Student Support** for their assistance throughout this project.
 
+### Disclaimer
+I do not own any of the photos or text written for the individual reviews. All opinions are that of their owners and not of the website. Please contact me in case of any copyright issue and I will happily remove anything.
+
+This project is for educational purposes only.
+
 ***
 

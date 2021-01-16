@@ -7,11 +7,9 @@
         </h2>
     </div>
 </div>
-<!-- <div class="add-tip-btn center-align">
-    <a class="btn-large white black-text" href="{{ url_for('add_review') }}">Add a review</a>
-</div> -->
 <h3 class="center-align">Your Reviews:</h3>
 <div class="container profile-tips">
+    <!-- review cards -->
     <div class="row">
         {% for review in reviews %}
         {% if session.user|lower == review.created_by|lower %}
