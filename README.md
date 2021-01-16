@@ -269,8 +269,9 @@ to the site for each individual review.
     <img src="documents/screenshots/gtmetrix.jpg">
 
 ### 4.6 Bugs
-I encountered the following bug while developing the Ireland Recommends website:
+I encountered the following bugs while developing the Ireland Recommends website:
 - When users were submitting a review, they could select any date using a date picker from Materialize. In order to acurately record the date, my mentor recommended that this should be automated using Python. It took some time to find the correct format but I eventually got the code to record dates accurately.
+- The upvote or "like" button on the review cards on the reviews page of the website continues to increment votes by 1 every time it is clicked and stores this value in the database. The value is then returned and displayed. Although this is how this code is meant to function, I would like to change it in the future so an individual user can only vote once. For the purpose of this project the current code works well.
 
 <span id="deploy"></span>
 
