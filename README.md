@@ -1,5 +1,3 @@
-![Ireland Recommends Logo]()
-
 # Milestone 3 Project - Ireland Recommends
 
 The purpose of this project is to develop an interactive website where users can create, read, update and delete reviews on places to eat, drink, stay and visit in Ireland. This website will allow users to both get and give recommendations and is designed to be responsive and accessible on desktop and mobile devices.
