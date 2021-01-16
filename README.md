@@ -257,7 +257,7 @@ performace score varied significantly while testing, mianly due to the image lin
 to the site for each individual review.
 
 #### On screen sizes of tablet size and below: 
-- Cards and divs are responsive and will align with the mobile view. 
+- Cards and divs are responsive and will align with the mobile view. The website was tested on an iPhone 11 and Huawei P Smart 2019 for responsoiveness and interaction on mobile devices.
 
 ### Further Testing
 
