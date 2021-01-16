@@ -8,7 +8,7 @@ Elements of this website were developed from the Code Institute coursework as we
 
 You can view the live website here: [Ireland Recommends](https://ireland-recommends.herokuapp.com/)
 
-![Ireland Recommends mockups on various devices](/docs/screenshots/IrelandRecommends_mockup.jpg)
+![Ireland Recommends mockups on various devices](/documents/screenshots/IrelandRecommends-mockup.jpg)
 
 ## Contents
 
@@ -119,14 +119,14 @@ The wireframe mockups gave me a basic idea of how best to lay out each individua
 #### Defensive Design
 - The following defensive programming design elements are in place to prevent a negative user experince:
     - In order to ensure that users and administrators do not accidentally delete a review permanently, a pop up modal requires the user to confirm their decision.
-        ![Modal](/docs/screenshots/modal.jpg)
+        ![Modal](/documents/screenshots/modal.jpg)
     - Usernames and passwords have a minimum and maximum (5,15) number of characters and can only be alphanumeric
     - Flash messaging is used to prevent users from accessing areas of the site that they do not have authorisation for. The page will then offer to return the user to the homepage.
-        ![Access Denied](/docs/screenshots/accessDenied.jpg)
+        ![Access Denied](/documents/screenshots/access-denied.jpg)
     - If no reviews are available to display, again flash messaging will inform the user of this.
-        ![No Reviews Found](/docs/screenshots/noReviewsFound.jpg)
+        ![No Reviews Found](/documents/screenshots/noreviews-found.jpg)
     - If a user encounters a 403, 404 or 500 error, a custom error page will appear, again offering to return users to the homepage.
-        ![Error 404](/docs/screenshots/404.jpg)
+        ![Error 404](/documents/screenshots/404.jpg)
 
 ***
 
@@ -138,7 +138,7 @@ MongoDB Atlas is used for storing data for this website. The project ahas 3 coll
 
 A diagram of the current schema is available below:
 
-<p><img src="docs/screenshots/dataSchema.jpg"></p>
+<p><img src="documents/screenshots/data-schema.jpg"></p>
 
 
 ***
@@ -217,21 +217,21 @@ The following  tools validate every page of the project to ensure it did not con
 - **[W3C HTML Validator](https://validator.w3.org/)**
     - The W3C HTML Validator checked the website for HTML validity errors.
     - This same result appears across every page of the site.
-    <p> <img src="docs/screenshots/htmlValidator.jpg">  </p> 
+    <p> <img src="documents/screenshots/html-validator.jpg">  </p> 
 
 - **[W3C CSS Validator](https://jigsaw.w3.org/css-validator/)**
     - The CSS Validator checked for validity errors in the website's CSS page.
     - There is 1 property issue found when checking the site. However, these are being validated from the Materialize 
     link and therefore out of my control.
-    <p> <img src="docs/screenshots/cssValidator.jpg">  </p>
+    <p> <img src="documents/screenshots/css-validator.jpg">  </p>
 
 - **[JSHint](https://jshint.com/)** 
     - No issues were found on this check.
-    <p> <img src="docs/screenshots/JSHint.jpg"></p>
+    <p> <img src="documents/screenshots/jshint.jpg"></p>
 
 - **[Python Validator](http://pep8online.com/)**
     No issues were found on this check.
-    <p> <img src="docs/screenshots/pep8.jpg"></p>  
+    <p> <img src="documents/screenshots/pep8.jpg"></p>  
 
 - **[Autoprefixer CSS Online](https://autoprefixer.github.io/)**
     - The Autoprefixer ensured that vendor prefixes were added to my CSS.
@@ -243,7 +243,7 @@ The following  tools validate every page of the project to ensure it did not con
 
 This was used to parse CSS and add vendor prefixes in order to ensure that the CSS styling works properly across all 
 browsers. I have added the below header to my CSS styles sheet in order to show this:
-<p> <img src="documentation/screenshots/css-prefixer.jpg">  </p>
+<p> <img src="/documents/screenshots/css-prefixer.jpg">  </p>
 
 ### 4.4 Testing User Stories
 
@@ -254,8 +254,8 @@ browsers. I have added the below header to my CSS styles sheet in order to show 
 
 #### Lighthouse
 
-<p >Desktop<img src="docs/screenshots/lighthouse-desktop.jpg">
-Mobile<img src="docs/screenshots/lighthouse-mobile.jpg"></p>
+<p >Desktop<img src="documents/screenshots/lighthouse-desktop.jpg">
+Mobile<img src="documents/screenshots/lighthouse-mobile.jpg"></p>
 
 From Chrome Developer Tools, this Lighthouse score is based on the performance of the Ireland Recommends homepage while being viewed on desktop and mobile. The 
 performace score varied significantly while testing, mianly due to the image link added by users 
@@ -271,7 +271,7 @@ to the site for each individual review.
 
 - **[GTMetrix](https://gtmetrix.com/)**
     - GTMetrix was used to test the loading speed of the site and to find out if any elements were creating long loading times. Ireland Recommends received an A grande for performance and structure.
-    <img src="docs/screenshots/GTMetrix.jpg">
+    <img src="documents/screenshots/gtmetrix.jpg">
 
 ### 4.6 Bugs
 I encountered the following bugs while developing the Ireland Recommends website:
