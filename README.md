@@ -201,7 +201,7 @@ I used the following languages for the project:
 - **[Heroku](https://dashboard.heroku.com/apps)**
     - Heroku is used for the hosting of the site and is deployed through here.
 
-- **[Google Drive](ttps://drive.google.com/)**
+- **[Google Drive](https://drive.google.com/)**
     - The Testing Document and Wireframe PNG files are saved to a Google Drive account and are openly accessible.
 ***
 <span id="test"></span>
